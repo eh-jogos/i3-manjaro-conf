@@ -86,6 +86,13 @@ firefox --new-window https://pomodoro-tracker.com/
 sleep 3
 firefox --new-tab https://app.hacknplan.com/p/118696/dashboards/personal?scope=board&boardId=308704
 sleep 1
+firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html
+sleep 1 
+firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
+sleep 1 
+firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
+sleep 1 
+
 $WORKFLOWY &
 while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
 do
