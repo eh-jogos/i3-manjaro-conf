@@ -12,7 +12,7 @@
 # - wmctrl
 # - Firefox
 
-SETUP_NAME = "Javary Mathy"
+SETUP_NAME="Javary Mathy"
 
 #i3 workspace names! Get them from your i3/congfig
 W1=1:1:Firefox

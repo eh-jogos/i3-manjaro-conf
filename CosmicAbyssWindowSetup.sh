@@ -22,7 +22,7 @@ W6=6:6:TabWork
 W7=7:7:TabOther
 W8=8:8:TabMedia
 
-SETUP_NAME = "Escape From the Cosmic Abyss"
+SETUP_NAME="Escape From the Cosmic Abyss"
 DUAL_MONITORS=true
 if [ ! -z "$1" ]
 then

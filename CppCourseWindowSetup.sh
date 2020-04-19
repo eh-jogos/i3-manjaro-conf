@@ -11,7 +11,7 @@ W6=6:6:TabWork
 W7=7:7:TabOther
 W8=8:8:TabMedia
 
-SETUP_NAME = "C++ Udemy Course"
+SETUP_NAME="C++ Udemy Course"
 DUAL_MONITORS=true
 if [ ! -z "$1" ]
 then

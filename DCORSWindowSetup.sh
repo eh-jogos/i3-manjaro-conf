@@ -22,7 +22,7 @@ W6=6:6:TabWork
 W7=7:7:TabOther
 W8=8:8:TabMedia
 
-SETUP_NAME = "DCORS Project"
+SETUP_NAME="DCORS Project"
 DUAL_MONITORS=true
 if [ ! -z "$1" ]
 then
@@ -51,10 +51,10 @@ CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == tru
 # Script Body
 i3-msg move container to workspace RESET_WORKSPACE
 i3-msg workspace RESET_WORKSPACE
-sleep 1
+sleep 2
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
-cd $WORK_FOLDER/Game
+cd $WORK_FOLDER/dcors_project/
 terminal
 cd ~
 if [ $DUAL_MONITORS = "true" ]
@@ -82,15 +82,15 @@ then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
 i3-msg layout tabbed
-firefox --new-window https://pomodoro-tracker.com/
+firefox --new-window https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html
 sleep 3
-firefox --new-tab https://app.hacknplan.com/p/118696/dashboards/personal?scope=board&boardId=308704
+firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
 sleep 1
-firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html
-sleep 1 
 firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
 sleep 1 
-firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
+firefox --new-tab https://app.hacknplan.com/p/118696/dashboards/personal?scope=board&boardId=308704
+sleep 1 
+firefox --new-tab https://pomodoro-tracker.com/
 sleep 1 
 
 $WORKFLOWY &
