@@ -1,0 +1,10 @@
+# KEYBOARD CONFIGURATION FILE
+
+# Consult the keyboard(5) manual page.
+
+XKBMODEL="pc105"
+XKBLAYOUT="br,us"
+XKBVARIANT="nodeadkeys"
+XKBOPTIONS="grp:rctrl_rshift_toggle"
+
+BACKSPACE="guess"
