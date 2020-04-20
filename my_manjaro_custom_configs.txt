@@ -89,7 +89,7 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 
 # Open applications on specific workspaces
 # use xprop to find the class name
-assign [class="Firefox"] $ws1
+assign [class="firefox"] $ws1
 assign [class="Godot"] $ws3
 assign [class="Godot_ProjectList"] $ws3
 assign [class="qBittorrent"] $ws7
