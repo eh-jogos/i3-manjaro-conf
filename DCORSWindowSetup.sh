@@ -54,7 +54,7 @@ i3-msg workspace RESET_WORKSPACE
 sleep 2
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
-cd $WORK_FOLDER/dcors_project/
+cd $WORK_FOLDER/dcors-project/
 terminal
 cd ~
 if [ $DUAL_MONITORS = "true" ]
