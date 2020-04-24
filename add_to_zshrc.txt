@@ -1,0 +1,6 @@
+alias escape_abyss=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/CosmicAbyssWindowSetup.sh
+alias learn_cpp=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/CppCourseWindowSetup.sh
+alias dcors_project=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/DCORSWindowSetup.sh
+
+fpath=( ~/.zfunc "${fpath[@]}" )
+autoload -Uz godot

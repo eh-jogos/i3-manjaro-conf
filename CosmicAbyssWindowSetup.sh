@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # A script to open my setup for working on Escape from the Cosmic Abyss
 # it accepts one optional argument to select if it should be dual monitors (true) or not (false), 
 # dual monitors is the default if nothing is passed
@@ -6,7 +6,7 @@
 # - i3wm
 # - Path to Project
 # - Monitor Adresses (Names?)
-# - Godot 2.1.x
+# - Godot 2.1.x (and my godot function in a folder called .zfunc at ~)
 # - Workflowy
 # - Thunar
 # - wmctrl
@@ -43,10 +43,12 @@ fi
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
-GODOT2=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/Godot_v2.1.6-stable_x11.64
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
+
+fpath=( ~/.zfunc "${fpath[@]}" )
+autoload -Uz godot
 
 # Script Body
 i3-msg move container to workspace RESET_WORKSPACE
@@ -83,9 +85,9 @@ then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
 i3-msg layout tabbed
-firefox --new-window https://pomodoro-tracker.com/
+firefox --new-window "https://pomodoro-tracker.com/"
 sleep 3
-firefox --new-tab https://docs.google.com/spreadsheets/d/1b26XumCT5TaKcx10XgyiDCsc19nzX6zUqJckSEz3QH0/edit#gid=0
+firefox --new-tab "https://docs.google.com/spreadsheets/d/1b26XumCT5TaKcx10XgyiDCsc19nzX6zUqJckSEz3QH0/edit#gid=0"
 sleep 1
 
 i3-msg workspace $W3
@@ -93,4 +95,4 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-$GODOT2
+godot 21

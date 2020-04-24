@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # A script to open my setup for working on the Dungeon Crawler On Rails Shooter project
 # it accepts one optional argument to select if it should be dual monitors (true) or not (false), 
 # dual monitors is the default if nothing is passed
@@ -6,7 +6,7 @@
 # - i3wm
 # - Path to Project
 # - Monitor Adresses (Names?)
-# - Godot 3.2.x
+# - Godot 3.2.x (and my godot function in a folder called .zfunc at ~)
 # - Workflowy
 # - Thunar
 # - wmctrl
@@ -43,10 +43,12 @@ fi
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/DCORS
-GODOT=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/Godot_v3.2.1-stable_x11.64
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
+
+fpath=( ~/.zfunc "${fpath[@]}" )
+autoload -Uz godot
 
 # Script Body
 i3-msg move container to workspace RESET_WORKSPACE
@@ -74,6 +76,11 @@ while ! [[ "$(wmctrl -l)" =~ "File Manager" ]]
 do
     sleep 2
 done
+$WORKFLOWY &
+while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
+do
+    sleep 2
+done
 
 
 i3-msg workspace $W1
@@ -82,23 +89,16 @@ then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
 i3-msg layout tabbed
-firefox --new-window https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html
+firefox --new-window "https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html"
 sleep 3
-firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
+firefox --new-tab "https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
 sleep 1
-firefox --new-tab https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html
+firefox --new-tab "https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
 sleep 1 
-firefox --new-tab https://app.hacknplan.com/p/118696/dashboards/personal?scope=board&boardId=308704
+firefox --new-tab "https://app.hacknplan.com/p/118696/dashboards/personal?scope=board&boardId=308704"
 sleep 1 
-firefox --new-tab https://pomodoro-tracker.com/
+firefox --new-tab "https://pomodoro-tracker.com/"
 sleep 1 
-
-$WORKFLOWY &
-while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
-do
-    sleep 2
-done
-
 
 
 i3-msg workspace $W3
@@ -106,5 +106,5 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-$GODOT
+godot 32
 
