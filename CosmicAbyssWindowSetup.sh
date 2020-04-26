@@ -71,8 +71,12 @@ then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
 i3-msg layout tabbed
-$WORKFLOWY &
 thunar $WORK_FOLDER &
+while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
+do
+    sleep 2
+done
+$WORKFLOWY &
 while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
 do
     sleep 2
