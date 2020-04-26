@@ -13,7 +13,7 @@ function godot(){
 			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.1-stable_x11.64
 			;;
 		*)
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/21x/Godot_v2.1.6-stable_x11.64
+			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.1-stable_x11.64
 			;;
 	esac
 }

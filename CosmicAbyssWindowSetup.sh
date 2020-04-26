@@ -99,4 +99,4 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-godot 21
+godot 32
