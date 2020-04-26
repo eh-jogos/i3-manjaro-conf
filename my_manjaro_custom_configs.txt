@@ -81,11 +81,12 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 #set $ws1 1:1:Firefox
 #set $ws2 2:2:Consoles
 #set $ws3 3:3:Godot
-#set $ws4 4:
-#set $ws5 5:
+#set $ws4 4:4:CodeAssist
+#set $ws5 5:5:Art
 #set $ws6 6:6:TabWork
 #set $ws7 7:7:TabOther
 #set $ws8 8:8:TabMedia
+
 
 # Open applications on specific workspaces
 # use xprop to find the class name
