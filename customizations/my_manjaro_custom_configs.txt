@@ -4,6 +4,9 @@
 ### my customizations ###
 #########################
 
+# Rebuild config and restar i3
+bindsym $mod+Shift+r exec ~/.i3/customizations/build_config.sh ; restart
+
 ### Resize inner gaps ###
 gaps inner 5
 
@@ -39,7 +42,7 @@ bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
 bindsym $mod+F4 exec spotify
 bindsym $mod+F5 exec vlc
-
+bindsym $mod+F6 exec code
 
 ### AutoStart Applications ###
 # If you wish to use bluetooth and/or you need to use multiple Keyboard
