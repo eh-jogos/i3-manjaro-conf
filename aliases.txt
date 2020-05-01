@@ -1,9 +1,0 @@
-alias godot2=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/Godot_v2.1.6-stable_x11.64
-alias godot30=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/Godot_v3.0.6-stable_x11.64
-alias godot31=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/Godot_v3.1.1-stable_x11.64
-alias godot32=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/Godot_v3.2.1-stable_x11.64
-
-alias escape_abyss=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/CosmicAbyssWindowSetup.sh
-alias learn_cpp=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/CppCourseWindowSetup.sh
-alias dcors_project=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/DCORSWindowSetup.sh
-

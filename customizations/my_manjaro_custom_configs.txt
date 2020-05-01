@@ -4,7 +4,8 @@
 ### my customizations ###
 #########################
 
-# Rebuild config and restar i3
+# Rebuild config and restart i3
+# Remember to comment out the original bindsym in the config.bk file
 bindsym $mod+Shift+r exec ~/.i3/customizations/build_config.sh ; restart
 
 ### Resize inner gaps ###
@@ -78,7 +79,7 @@ exec_always xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rot
 ### Send workspcaes to Monitor
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
-bindsym $mod+Ctrl+Shift+b exec ~/.i3-config-scripts/i3-display-swap.sh
+bindsym $mod+Ctrl+Shift+b exec ~/.i3/customizations/scripts/i3-display-swap.sh
 
 
 ### Custom Workspace Suggestions ###
