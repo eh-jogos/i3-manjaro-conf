@@ -1,4 +1,5 @@
 
+
 #########################
 ### my customizations ###
 #########################
@@ -51,7 +52,9 @@ exec --no-startup-id xautolock -time 10 -locker blurlock -corners ---- #Deactiva
 
 # These are new, remember to install the software
 exec_always --no-startup-id optimus-manager-qt
-exec qbittorrent
+exec --no-startup-id qbittorrent
+exec --no-startup-id ~/.fehbg
+exec firefox
 
 
 ### Monitor Layout ###
@@ -72,6 +75,7 @@ exec_always xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rot
 ### Send workspcaes to Monitor
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
+bindsym $mod+Ctrl+Shift+b exec ~/.i3-config-scripts/i3-display-swap.sh
 
 
 ### Custom Workspace Suggestions ###
@@ -93,6 +97,7 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 assign [class="firefox"] $ws1
 assign [class="Godot"] $ws3
 assign [class="Godot_ProjectList"] $ws3
+assign [class="code-oss"] $ws4
 assign [class="qBittorrent"] $ws7
 assign [class="TelegramDesktop"] $ws7
 assign [class="Spotify"] $ws8
