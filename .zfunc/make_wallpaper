@@ -1,0 +1,9 @@
+function make_wallpaper(){
+	if [ $# = 0 ]
+	then 
+		echo "make_wallpaper needs to receive one argument that is the path to the image file"
+	else
+		convert $1 -resize 1920x1080 -gravity center -background black -extent 1920x1080 ~/Pictures/Wallpapers/$1
+		echo "image saved at ~/Pictures/Wallpapers"
+	fi
+}
