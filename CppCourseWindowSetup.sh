@@ -5,8 +5,8 @@
 W1=1:1:Firefox
 W2=2:2:Consoles
 W3=3:3:Godot
-W4=4:
-W5=5:
+W4=4:4:CodeAssist
+W5=5:5:Art
 W6=6:6:TabWork
 W7=7:7:TabOther
 W8=8:8:TabMedia
@@ -56,11 +56,6 @@ sleep 1
 
 i3-msg workspace $W6
 i3-msg layout tabbed
-codelite &
-while ! [[ "$(wmctrl -l)" =~ "Udemy Cpp Course" ]] 
-do
-    sleep 2
-done
 $WORKFLOWY &
 while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
 do
@@ -70,10 +65,27 @@ cd $CPP_COURSE_FOLDER
 terminal 
 cd ~
 i3-msg split h
+sleep 1
 thunar $CPP_COURSE_FOLDER &
-sleep 5
+while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
+do
+    sleep 2
+done
 i3-msg move left
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
+
+i3-msg workspace $W4
+i3-msg layout tabbed
+codelite &
+while ! [[ "$(wmctrl -l)" =~ "Udemy Cpp Course" ]] 
+do
+    sleep 2
+done
+if [ $DUAL_MONITORS = "true" ]
+then
+    i3-msg move workspace to output $MONITOR_RIGHT
+fi
+sleep 1
