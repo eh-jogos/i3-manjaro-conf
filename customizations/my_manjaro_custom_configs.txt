@@ -15,7 +15,7 @@ bindsym $mod+Shift+r exec ~/.i3/customizations/build_config.sh ; restart
 # The "----" Deactivates xautolock if cursor is in the any corner
 # exec --no-startup-id xautolock -time 10 -locker blurlock -corners ----
 # exec --no-startup-id xautolock -time 10 -locker /home/vandalk/.i3/customizations/scripts/i3-lock-random-image.sh -corners ----
-exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 600 '~/.i3/customizations/scripts/i3-lock-random-image.sh' ''
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 300 '~/.i3/customizations/scripts/i3-lock-random-image.sh' ''
 
 ## Custom Workspace Suggestions ##
 # If you're using manjaro, the variables are already set in the config, so don't
@@ -35,7 +35,7 @@ exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 60
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
 bindsym $mod+F4 exec spotify
-bindsym $mod+F5 exec vlc
+bindsym $mod+F5 exec smplayer
 bindsym $mod+F6 exec code
 
 # ----------------------------------------------------------------------------------------
@@ -129,12 +129,12 @@ assign [class="code-oss"] $ws4
 assign [class="qBittorrent"] $ws7
 assign [class="TelegramDesktop"] $ws7
 assign [class="Spotify"] $ws8
-assign [class="vlc"] $ws8
+assign [class="smplayer"] $ws8
 
 # Special Rules for specific apllications
 ## floating config: floating enable border normal
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws8; layout tabbed
-for_window [class="vlc"] layout tabbed
+for_window [class="smplayer"] layout tabbed
 for_window [class="qBittorrent"] layout tabbed
 for_window [class="TelegramDesktop"] layout tabbed
 for_window [class="Godot_Editor"] layout tabbed
