@@ -12,10 +12,21 @@ function godot(){
 			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/31x/Godot_v3.1.1-stable_x11.64 "${@:2}"
 			;;
 		"32")
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.1-stable_x11.64 "${@:2}"
+			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.2-stable_x11.64 "${@:2}"
+			;;
+		"32-steam")
+			export LD_PRELOAD=~/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
+			cd /mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x-Steam/
+			./godot.x11.opt.tools.64 "${@:2}"
 			;;
 		*)
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.1-stable_x11.64 "${@:2}"
+			if [[ $1 != "" ]]
+			then
+				echo "\n#####---WARNING---#######################"
+				echo "Could Not Find $1. Opening default option"
+				echo "#########################################\n"
+			fi
+			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.2-stable_x11.64 "${@:2}"
 			;;
 	esac
 }
