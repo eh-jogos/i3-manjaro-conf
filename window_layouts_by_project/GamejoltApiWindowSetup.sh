@@ -43,7 +43,7 @@ fi
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 
-WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
+WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/
 GODOT_PROJECT_FOLDER=demo-project
 
 MONITOR_LEFT=eDP-1-1
@@ -53,14 +53,31 @@ CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == tru
 fpath=( ~/.zfunc "${fpath[@]}" )
 autoload -Uz godot
 
-# Script Body
+########### Script Body
+
+# RESET WORKSPACE
 i3-msg move container to workspace RESET_WORKSPACE
 i3-msg workspace RESET_WORKSPACE
 sleep 1
+
+
+# Open Terminals and Git
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
 cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 terminal
+while ! [[ "$(wmctrl -lx)" =~ $GODOT_PROJECT_FOLDER ]] 
+do
+    sleep 1
+done
+i3-msg focus parent
+i3-msg split h
+gitahead . & 
+while ! [[ "$(wmctrl -lx)" =~ "gitahead" ]] 
+do
+    sleep 1
+done
+i3-msg layout stacking
 cd ~
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -68,12 +85,14 @@ then
 fi
 sleep 3
 
+
+# Open Project folder and workflowy
 i3-msg workspace $W6
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-i3-msg layout tabbed
+i3-msg layout stacking
 thunar $WORK_FOLDER &
 while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
 do
@@ -86,19 +105,22 @@ do
 done
 
 
+# Open Browser and relevant tabs
 i3-msg workspace $W1
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-i3-msg layout tabbed
 firefox --new-window "https://pomodoro-tracker.com/"
 sleep 3
+i3-msg layout tabbed
 firefox --new-tab "https://app.hacknplan.com/"
 sleep 1
 firefox --new-tab "https://docs.google.com/spreadsheets/"
 sleep 1
 
+
+# Open Godot
 i3-msg workspace $W3
 if [ $DUAL_MONITORS = "true" ]
 then

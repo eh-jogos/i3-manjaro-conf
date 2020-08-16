@@ -53,14 +53,31 @@ CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == tru
 fpath=( ~/.zfunc "${fpath[@]}" )
 autoload -Uz godot
 
-# Script Body
+########### Script Body
+
+# RESET WORKSPACE
 i3-msg move container to workspace RESET_WORKSPACE
 i3-msg workspace RESET_WORKSPACE
 sleep 1
+
+
+# Open Terminals and Git
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
 cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 terminal
+while ! [[ "$(wmctrl -lx)" =~ $GODOT_PROJECT_FOLDER ]] 
+do
+    sleep 1
+done
+i3-msg focus parent
+i3-msg split h
+gitahead . & 
+while ! [[ "$(wmctrl -lx)" =~ "gitahead" ]] 
+do
+    sleep 1
+done
+i3-msg layout stacking
 cd ~
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -68,6 +85,8 @@ then
 fi
 sleep 3
 
+
+# Open Project folder and workflowy
 i3-msg workspace $W6
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -86,6 +105,7 @@ do
 done
 
 
+# Open Browser and relevant tabs
 i3-msg workspace $W1
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -101,6 +121,7 @@ sleep 1
 firefox --new-tab "https://itch.io/dashboard"
 sleep 1
 
+# Open Godot
 i3-msg workspace $W3
 if [ $DUAL_MONITORS = "true" ]
 then
