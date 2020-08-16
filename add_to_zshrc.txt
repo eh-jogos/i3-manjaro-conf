@@ -1,6 +1,14 @@
-alias escape_abyss=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/CosmicAbyssWindowSetup.sh
-alias learn_cpp=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/CppCourseWindowSetup.sh
-alias dcors_project=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/DCORSWindowSetup.sh
-
+# Custom zsh Funcs
 fpath=( ~/.zfunc "${fpath[@]}" )
 autoload -Uz godot
+autoload -Uz project_layout
+
+
+# Javary Stuff
+alias javary_mathy=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/JavaryMathySetup.sh
+alias go=godot/bin/godot.x11.opt.tools.64
+
+export ANDROID_HOME=/home/vandalk/Android/Sdk
+export ANDROID_NDK_HOME=/home/vandalk/Android/Sdk/ndk/21.3.6528147/
+export ANDROID_NDK_ROOT=/home/vandalk/Android/Sdk/ndk/21.3.6528147/
+export PATH="/home/vandalk/Android/Sdk/platform-tools:$PATH"
