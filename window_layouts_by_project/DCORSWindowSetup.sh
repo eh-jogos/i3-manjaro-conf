@@ -42,7 +42,10 @@ fi
 
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
+
 WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/DCORS
+GODOT_PROJECT_FOLDER=dcors-project
+
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
@@ -56,7 +59,7 @@ i3-msg workspace RESET_WORKSPACE
 sleep 2
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
-cd $WORK_FOLDER/dcors-project/
+cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 terminal
 cd ~
 if [ $DUAL_MONITORS = "true" ]
@@ -95,7 +98,7 @@ firefox --new-tab "https://docs.godotengine.org/en/stable/tutorials/math/vector_
 sleep 1
 firefox --new-tab "https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
 sleep 1 
-firefox --new-tab "https://app.hacknplan.com/p/118696/dashboards/personal?scope=board&boardId=308704"
+firefox --new-tab "https://app.hacknplan.com/"
 sleep 1 
 firefox --new-tab "https://pomodoro-tracker.com/"
 sleep 1 

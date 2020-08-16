@@ -42,7 +42,10 @@ fi
 
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
+
 WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
+GODOT_PROJECT_FOLDER=GameSteam
+
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
@@ -56,7 +59,7 @@ i3-msg workspace RESET_WORKSPACE
 sleep 1
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
-cd $WORK_FOLDER/Game
+cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 terminal
 cd ~
 if [ $DUAL_MONITORS = "true" ]
@@ -91,7 +94,11 @@ fi
 i3-msg layout tabbed
 firefox --new-window "https://pomodoro-tracker.com/"
 sleep 3
-firefox --new-tab "https://docs.google.com/spreadsheets/d/1b26XumCT5TaKcx10XgyiDCsc19nzX6zUqJckSEz3QH0/edit#gid=0"
+firefox --new-tab "https://docs.google.com/spreadsheets/"
+sleep 1
+firefox --new-tab "https://partner.steamgames.com/apps/landing/"
+sleep 1
+firefox --new-tab "https://itch.io/dashboard"
 sleep 1
 
 i3-msg workspace $W3
@@ -99,4 +106,4 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-godot 32
+godot 32-steam
