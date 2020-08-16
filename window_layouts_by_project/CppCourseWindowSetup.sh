@@ -43,7 +43,7 @@ i3-msg workspace RESET_WORKSPACE
 
 i3-msg workspace $W1
 sleep 1
-i3-msg layout tabbed
+i3-msg layout stacking
 firefox --new-window https://www.udemy.com/course/beginning-c-plus-plus-programming/learn/
 sleep 3
 firefox --new-tab https://pomodoro-tracker.com/
@@ -55,7 +55,7 @@ fi
 sleep 1
 
 i3-msg workspace $W6
-i3-msg layout tabbed
+i3-msg layout stacking
 $WORKFLOWY &
 while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
 do
@@ -78,7 +78,7 @@ then
 fi
 
 i3-msg workspace $W4
-i3-msg layout tabbed
+i3-msg layout stacking
 codelite &
 while ! [[ "$(wmctrl -l)" =~ "Udemy Cpp Course" ]] 
 do

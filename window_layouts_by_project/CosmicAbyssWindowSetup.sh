@@ -92,7 +92,7 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-i3-msg layout tabbed
+i3-msg layout stacking
 thunar $WORK_FOLDER &
 while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
 do
@@ -111,7 +111,7 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-i3-msg layout tabbed
+i3-msg layout stacking
 firefox --new-window "https://pomodoro-tracker.com/"
 sleep 3
 firefox --new-tab "https://docs.google.com/spreadsheets/"
