@@ -114,9 +114,9 @@ fi
 firefox --new-window "https://pomodoro-tracker.com/"
 sleep 3
 i3-msg layout stacking
-firefox --new-tab "https://app.hacknplan.com/"
-sleep 1
 firefox --new-tab "https://docs.google.com/spreadsheets/"
+sleep 1
+firefox --new-tab "https://app.hacknplan.com/"
 sleep 1
 
 
