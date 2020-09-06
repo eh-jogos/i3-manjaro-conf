@@ -111,10 +111,10 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-firefox --new-window "https://pomodoro-tracker.com/"
+firefox --new-window "https://docs.google.com/spreadsheets/"
 sleep 3
+firefox --new-tab "https://pomodoro-tracker.com/"
 i3-msg layout stacking
-firefox --new-tab "https://docs.google.com/spreadsheets/"
 sleep 1
 firefox --new-tab "https://app.hacknplan.com/"
 sleep 1

@@ -133,11 +133,9 @@ bindsym $mod+Ctrl+Shift+b exec ~/.i3/customizations/scripts/i3-display-swap.sh
 # Open applications on specific workspaces
 # use xprop to find the class name
 assign [class="firefox"] $ws1
-assign [class="Godot"] $ws3
-assign [class="Godot_ProjectList"] $ws3
+#assign [class="Godot"] $ws3 # This will always change focus to it
 assign [class="qBittorrent"] $ws7
 assign [class="TelegramDesktop"] $ws7
-assign [class="Spotify"] $ws8
 assign [class="smplayer"] $ws8
 
 # Special Rules for specific apllications
@@ -147,9 +145,8 @@ for_window [class="Spotify"] move --no-auto-back-and-forth container to workspac
 for_window [class="smplayer"] layout tabbed
 for_window [class="qBittorrent"] layout tabbed
 for_window [class="TelegramDesktop"] layout tabbed
-for_window [class="Godot_Editor"] layout tabbed
-for_window [class="Godot_ProjectList"] layout tabbed
-for_window [class="Godot_Engine"] floating enable border normal
+for_window [class="Godot"] move --no-auto-back-and-forth container to workspace $ws3
+for_window [title="(DEBUG)"] floating enable border normal
 for_window [class="Git-gui"] floating enable border normal
 for_window [class="Gitk"] floating enable border normal
 for_window [class="Gnome-calculator"] floating enable border normal

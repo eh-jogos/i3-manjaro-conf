@@ -23,7 +23,7 @@ function project_layout(){
 			echo " - Gamejolt API --------------------------------- gamejolt_api | gjapi"
 			echo " - C++ Udemy Course ----------------------------- cpp"
 			echo " - Dungeon Crawler On Rails Shooter ------------- dcors"
-			echo " - Escape From the Cosmic Abyss: cosmic_abyss --- escape_abyss | cosmic | abyss"
+			echo " - Escape From the Cosmic Abyss ----------------- cosmic_abyss | escape_abyss | cosmic | abyss"
 			echo " - Javary: Mathy -------------------------------- mathy"
 			;;
 	esac
