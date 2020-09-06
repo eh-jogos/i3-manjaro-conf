@@ -1,32 +1,49 @@
 function godot(){
 	# echo $1
 	# echo "${@:2}"
+	v21=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/21x/Godot_v2.1.6-stable_x11.64
+	v30=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/30x/Godot_v3.0.6-stable_x11.64
+	v31=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/31x/Godot_v3.1.1-stable_x11.64
+	v32=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.2-stable_x11.64
+	v32_steam_folder=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x-Steam/
+	defalt_version=$v32
+
 	case $1 in
+		"-h | --help")
+			echo "Opens Godot. \nIf no arguments are passed it will open the default option (normally the most recent one)"
+			echo "Current arguments are:"
+			echo " - 21---------- opens Godot 2.1.x"
+			echo " - 30---------- opens Godot 3.0.x"
+			echo " - 31---------- opens Godot 3.1.x"
+			echo " - 32---------- opens Godot 3.2.x"
+			echo " - 32-steam --- opens Custom Godot 3.2.x with Steam Module"
+			;;
 		"21")
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/21x/Godot_v2.1.6-stable_x11.64 "${@:2}"
+			$v21 "${@:2}"
 			;;
 		"30")
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/30x/Godot_v3.0.6-stable_x11.64 "${@:2}"
+			$v30 "${@:2}"
 			;;
 		"31")
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/31x/Godot_v3.1.1-stable_x11.64 "${@:2}"
+			$v31 "${@:2}"
 			;;
 		"32")
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.2-stable_x11.64 "${@:2}"
+			$v32 "${@:2}"
 			;;
 		"32-steam")
 			export LD_PRELOAD=~/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
-			cd /mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x-Steam/
+			cd $v32_steam_folder
 			./godot.x11.opt.tools.64 "${@:2}"
 			;;
 		*)
 			if [[ $1 != "" ]]
 			then
-				echo "\n#####---WARNING---#######################"
-				echo "Could Not Find $1. Opening default option"
-				echo "#########################################\n"
+				echo "\n--WARNING--#####"
+				echo "Could Not Find $1."
+				echo "##################\n"
 			fi
-			/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.2-stable_x11.64 "${@:2}"
+			echo "Opening default option, use -h to see all possible arguments."
+			$defalt_version "${@:2}"
 			;;
 	esac
 }
