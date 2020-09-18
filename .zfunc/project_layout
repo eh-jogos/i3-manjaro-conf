@@ -17,6 +17,9 @@ function project_layout(){
 		"mathy")
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/JavaryMathySetup.sh
 			;;
+		"alicerce" | "ali")
+			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh
+			;;
 		*)
 			echo "project_layout needs to receive one argument that is the project name or alias"
 			echo "\nCurrent aliases are:"
@@ -25,6 +28,7 @@ function project_layout(){
 			echo " - Dungeon Crawler On Rails Shooter ------------- dcors"
 			echo " - Escape From the Cosmic Abyss ----------------- cosmic_abyss | escape_abyss | cosmic | abyss"
 			echo " - Javary: Mathy -------------------------------- mathy"
+			echo " - Alicerce ------------------------------------- alicerce | ali"
 			;;
 	esac
 }
