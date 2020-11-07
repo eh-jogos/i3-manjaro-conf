@@ -4,10 +4,12 @@
 # https://wiki.archlinux.org/index.php/wacom_tablet#xrandr_setup
 
 # Please turn this into a function when going back to manjaro i3?? Or just set this script in another location
-# To map this into a cintiq button you'll nedd to have a shortcut that executes a script or a function, so maybe it's better to try to go back to i3, as I'm more used to setting 
-# strartup configurations and shortcuts there, which in turn would make making a function usefull as I can use them in the setup/shortkey and in any other terminal
-# if I want to experiment with values or other monitor setups
-# maybe the mfunction could receive the monitor coordinates as different parameters and calculate the rest from there?
+# To map this into a cintiq button you'll nedd to have a shortcut that executes a script or a function, so maybe 
+# it's better to try to go back to i3, as I'm more used to setting strartup configurations and shortcuts there, 
+# which in turn would make making a function usefull as I can use them in the setup/shortkey and in any other terminal
+# if I want to experiment with values or other monitor setups maybe the mfunction could receive the monitor coordinates 
+# as different parameters and calculate the rest from there?
+#
 # os passos seriam: 
 #   - Receber e tratar os parametros em screen_width screen_heigth screen_x screen_y
 #   - Restear a Area da caneta

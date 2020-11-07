@@ -98,6 +98,7 @@ exec_always --no-startup-id optimus-manager-qt
 exec --no-startup-id qbittorrent
 exec --no-startup-id ~/.fehbg
 exec firefox
+exec steam
 
 # ----------------------------------------------------------------------------------------
 
@@ -124,6 +125,23 @@ bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+b exec ~/.i3/customizations/scripts/i3-display-swap.sh
 
+### Wacom Pen bindings
+bindsym $mod+Next exec ~/.i3/customizations/scripts/map_tablet_to_right_monitor.sh
+bindsym $mod+Prior exec ~/.i3/customizations/scripts/map_tablet_to_left_monitor.sh
+
+### Monitor layout mode
+set $mode_monitors Monitors: (d) dell, (c) cintiq, (s) single-monitor
+bindsym $mod+Shift+m mode "$mode_monitors"
+
+mode "$mode_monitors" {
+        bindsym d      exec xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output eDP-1-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-1 --off --output HDMI-1-1 --off --output DP-1-2 --off --output HDMI-1-2 --off --output DP-1-3 --off --output HDMI-1-3 --off; mode "default";
+        bindsym c      exec arandr ~/.i3/customizations/xrandr_screen_presets/DualMonitorWacomCINTIQ21UX_arandr.sh; exec ~/.i3/customizations/scripts/map_tablet_to_right_monitor.sh; mode "default";
+        bindsym s      exec ~/.i3/customizations/xrandr_screen_presets/single_monitor.sh; mode "default";
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
 # ----------------------------------------------------------------------------------------
 
 
@@ -137,6 +155,7 @@ assign [class="firefox"] $ws1
 assign [class="qBittorrent"] $ws7
 assign [class="TelegramDesktop"] $ws7
 assign [class="smplayer"] $ws8
+assign [class="Steam"] $ws8
 
 # Special Rules for specific apllications
 ## floating config: floating enable border normal
@@ -144,19 +163,12 @@ for_window [class="code"] move --no-auto-back-and-forth container to workspace $
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws8; layout tabbed
 for_window [class="smplayer"] layout tabbed
 for_window [class="qBittorrent"] layout tabbed
-for_window [class="TelegramDesktop"] layout tabbed
-for_window [class="Godot"] move --no-auto-back-and-forth container to workspace $ws3
-for_window [title="(DEBUG)"] floating enable border normal
+for_window [class="TelegramDesktop"] layout stacking
+for_window [title="Godot Engine - "] move --no-auto-back-and-forth container to workspace $ws3
+for_window [title="(DEBUG)"] floating enable border normal; move position 1920 px 50px;
 for_window [class="Git-gui"] floating enable border normal
 for_window [class="Gitk"] floating enable border normal
 for_window [class="Gnome-calculator"] floating enable border normal
 for_window [class="Codelite-terminal"] floating enable border normal
-for_window [title="^Escape From The Cosmic Abyss$"] floating enable border normal
-for_window [title="^Dungeon Crawler Rail Shooter$"] floating enable border normal
 
 # ----------------------------------------------------------------------------------------
-
-
-# ----------------------------------------------------------------------------------------
-### Javary Stuff ###
-for_window [title="^Mathy$"] floating enable border normal
