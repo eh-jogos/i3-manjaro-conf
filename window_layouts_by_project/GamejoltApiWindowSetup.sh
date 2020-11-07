@@ -61,29 +61,26 @@ i3-msg workspace RESET_WORKSPACE
 sleep 1
 
 
-# Open Terminals and Git
+# Open terminals
 i3-msg move container to workspace $W2
 i3-msg workspace $W2
-cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
-terminal
-while ! [[ "$(wmctrl -lx)" =~ $GODOT_PROJECT_FOLDER ]] 
-do
-    sleep 1
-done
-i3-msg focus parent
-i3-msg split h
-gitahead . & 
-while ! [[ "$(wmctrl -lx)" =~ "gitahead" ]] 
-do
-    sleep 1
-done
-i3-msg layout stacking
-cd ~
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-sleep 3
+
+
+# Open Code
+i3-msg workspace $W4
+if [ $DUAL_MONITORS = "true" ]
+then
+    i3-msg move workspace to output $MONITOR_LEFT
+fi
+code $WORK_FOLDER/$GODOT_PROJECT_FOLDER
+while ! [[ "$(wmctrl -lx)" =~ "- Code - OSS" ]] 
+do
+    sleep 1
+done
 
 
 # Open Project folder and workflowy
@@ -126,4 +123,8 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-godot 32
+godot 32 &
+
+i3-msg workspace $W2
+cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
+
