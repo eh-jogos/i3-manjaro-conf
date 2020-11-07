@@ -1,28 +1,83 @@
 function project_layout(){
 	# echo $1
 	# echo "${@:2}"
+	dual_monitor=true
+	if [ ! -z "$2" ]
+	then
+		if [ $2 = "false" ]
+		then
+			dual_monitor=false
+		elif [ $2 != "true" ]
+		then
+			echo "unrecognized option for dual monitors: $2 | Going with default (true)"
+		fi
+	fi
+
 	case $1 in
-		"gamejolt_api" | "gjapi")
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GamejoltApiWindowSetup.sh
+		"ghgo2020" | "ghgo")
+			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
+			
+			project_name="Github Gameoff 2020"
+			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/GHGO2020-Moonshot/
+			godot_project_folder=Project
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://eh-jogos.itch.io/ghgo20-moonshot"
+
+			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
-		"cpp")
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh
+		"gamejolt_api" | "gjapi")
+			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
+			
+			project_name="Godot GameJolt API plugin"
+			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/
+			godot_project_folder=demo-project
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://app.hacknplan.com/"
+
+			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
 		"dcors")
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/DCORSWindowSetup.sh
+			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
+			
+			project_name="DCORS Project"
+			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/DCORS
+			godot_project_folder=dcors-project
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html"
+			firefox_tabs[2]="https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
+			firefox_tabs[3]="https://app.hacknplan.com/"
+
+			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/CosmicAbyssWindowSetup.sh
+			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
+			
+			project_name="Escape From the Cosmic Abyss"
+			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
+			godot_project_folder=GameSteam
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://partner.steamgames.com/apps/landing/"
+			firefox_tabs[2]="https://itch.io/dashboard"
+
+			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			;;
+		"cpp")
+			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh $dual_monitor
 			;;
 		"mathy")
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/JavaryMathySetup.sh
+			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/JavaryMathySetup.sh $dual_monitor
 			;;
 		"alicerce" | "ali")
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh
+			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh $dual_monitor
 			;;
 		*)
 			echo "project_layout needs to receive one argument that is the project name or alias"
 			echo "\nCurrent aliases are:"
+			echo " - Github Game Off 2020 ------------------------- ghgo2020 | ghgo"
 			echo " - Gamejolt API --------------------------------- gamejolt_api | gjapi"
 			echo " - C++ Udemy Course ----------------------------- cpp"
 			echo " - Dungeon Crawler On Rails Shooter ------------- dcors"

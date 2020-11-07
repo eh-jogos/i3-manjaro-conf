@@ -2,6 +2,12 @@
 # A script to open my setup for working on Escape from the Cosmic Abyss
 # it accepts one optional argument to select if it should be dual monitors (true) or not (false), 
 # dual monitors is the default if nothing is passed
+# Parameters are:
+# $1 - SETUP_NAME
+# $2 - WORK_FOLDER
+# $3 - GODOT_PROJECT_FOLDER
+# $4 - DUAL MONITORs
+# $5... - everything from 5 onwards will be considered as firefox tabs
 # Dependencies:
 # - i3wm
 # - Path to Project
@@ -11,6 +17,8 @@
 # - Thunar
 # - wmctrl
 # - Firefox
+
+# echo "${@}"
 
 #i3 workspace names! Get them from your i3/congfig
 W1=1:1:Firefox
@@ -22,17 +30,17 @@ W6=6:6:TabWork
 W7=7:7:TabOther
 W8=8:8:TabMedia
 
-SETUP_NAME="Godot GameJolt API plugin"
+SETUP_NAME=$1
 DUAL_MONITORS=true
-if [ ! -z "$1" ]
+if [ ! -z "$4" ]
 then
-    if [ $1 = "false" ]
+    if [ $4 = "false" ]
     then
         DUAL_MONITORS=false
         echo "Single Monitor Setup for $SETUP_NAME"
-    elif [ $1 != "true" ]
+    elif [ $4 != "true" ]
     then
-        echo "$SETUP_NAME || unrecognized option: $1 | Going with default (Dual Monitor)"
+        echo "$SETUP_NAME || unrecognized option: $4 | Going with default (Dual Monitor)"
     else
         echo "Dual Monitor Setup for $SETUP_NAME"
     fi
@@ -43,8 +51,8 @@ fi
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 
-WORK_FOLDER=/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/
-GODOT_PROJECT_FOLDER=demo-project
+WORK_FOLDER=$2
+GODOT_PROJECT_FOLDER=$3
 
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0
@@ -103,7 +111,7 @@ do
 done
 
 
-# Open Browser and relevant tabs
+Open Browser and relevant tabs
 i3-msg workspace $W1
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -114,8 +122,16 @@ sleep 3
 firefox --new-tab "https://pomodoro-tracker.com/"
 i3-msg layout stacking
 sleep 1
-firefox --new-tab "https://app.hacknplan.com/"
-sleep 1
+if [ ! -z "$5" ]
+then
+    for url in ${@:5};
+    do
+        firefox --new-tab $url
+        sleep 1
+    done
+else
+    echo "No additional Firefox tabs"
+fi
 
 
 # Open Godot
@@ -124,4 +140,4 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-godot 32 &
+godot 32 -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 

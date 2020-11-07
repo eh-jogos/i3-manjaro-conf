@@ -69,7 +69,6 @@ then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
 cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
-terminal
 
 
 # Open Code
@@ -110,10 +109,10 @@ if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-i3-msg layout stacking
-firefox --new-window "https://pomodoro-tracker.com/"
+firefox --new-window "https://docs.google.com/spreadsheets/"
 sleep 3
-firefox --new-tab "https://docs.google.com/spreadsheets/"
+firefox --new-tab "https://pomodoro-tracker.com/"
+i3-msg layout stacking
 sleep 1
 firefox --new-tab "https://partner.steamgames.com/apps/landing/"
 sleep 1
