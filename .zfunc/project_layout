@@ -22,7 +22,7 @@ function project_layout(){
 			godot_project_folder=Project
 			
 			firefox_tabs=()
-			firefox_tabs[1]="https://eh-jogos.itch.io/ghgo20-moonshot"
+			firefox_tabs[1]="https://itch.io/dashboard"
 
 			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
