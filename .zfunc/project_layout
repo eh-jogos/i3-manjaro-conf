@@ -12,23 +12,22 @@ function project_layout(){
 			echo "unrecognized option for dual monitors: $2 | Going with default (true)"
 		fi
 	fi
-
+	
+	generic_godot_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
+	
 	case $1 in
 		"ghgo2020" | "ghgo")
-			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
-			
 			project_name="Github Gameoff 2020"
 			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/GHGO2020-Moonshot/
 			godot_project_folder=Project
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://itch.io/dashboard"
+			firefox_tabs[3]="https://trello.com/b/zmqqqMzA/jenga-de-shots"
 
-			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
 		"gamejolt_api" | "gjapi")
-			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
-			
 			project_name="Godot GameJolt API plugin"
 			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/
 			godot_project_folder=demo-project
@@ -36,11 +35,9 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/"
 
-			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
 		"dcors")
-			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
-			
 			project_name="DCORS Project"
 			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/DCORS
 			godot_project_folder=dcors-project
@@ -50,20 +47,18 @@ function project_layout(){
 			firefox_tabs[2]="https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
 			firefox_tabs[3]="https://app.hacknplan.com/"
 
-			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
-			generic_godo_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
-			
 			project_name="Escape From the Cosmic Abyss"
 			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
 			godot_project_folder=GameSteam
 			
 			firefox_tabs=()
-			firefox_tabs[1]="https://partner.steamgames.com/apps/landing/"
+			firefox_tabs[1]="https://partner.steamgames.com/"
 			firefox_tabs[2]="https://itch.io/dashboard"
 
-			$generic_godo_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
 		"cpp")
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh $dual_monitor

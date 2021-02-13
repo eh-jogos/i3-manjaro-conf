@@ -86,7 +86,7 @@ then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
 code $WORK_FOLDER/$GODOT_PROJECT_FOLDER
-while ! [[ "$(wmctrl -lx)" =~ "- Code - OSS" ]] 
+while ! [[ "$(wmctrl -lx)" =~ "code-oss.code-oss" ]] 
 do
     sleep 1
 done
@@ -100,12 +100,14 @@ then
 fi
 i3-msg layout stacking
 thunar $WORK_FOLDER &
-while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
+while ! [[ "$(wmctrl -lx)" =~ "thunar.Thunar" ]] 
 do
+    wmctrl -lx
+    echo "waiting on Thunar"
     sleep 2
 done
 $WORKFLOWY &
-while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]] 
+while ! [[ "$(wmctrl -lx)" =~ "workflowy.WorkFlowy" ]] 
 do
     sleep 2
 done
