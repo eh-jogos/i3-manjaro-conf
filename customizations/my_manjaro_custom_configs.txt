@@ -11,6 +11,9 @@
 # Remember to comment out the original bindsym in the config.bk file
 bindsym $mod+Shift+r exec ~/.i3/customizations/build_config.sh ; restart
 
+# Lock screen
+bindsym $mod+9 exec ~/.i3/customizations/scripts/i3-lock-random-image.sh
+
 # These are changes to default options, search them and comment them upwards
 # The "----" Deactivates xautolock if cursor is in the any corner
 # exec --no-startup-id xautolock -time 10 -locker blurlock -corners ----
@@ -151,20 +154,21 @@ mode "$mode_monitors" {
 # Open applications on specific workspaces
 # use xprop to find the class name
 assign [class="firefox"] $ws1
-#assign [class="Godot"] $ws3 # This will always change focus to it
+# This will always change focus to it
+assign [class="Godot"] $ws3
 assign [class="qBittorrent"] $ws7
 assign [class="TelegramDesktop"] $ws7
-assign [class="smplayer"] $ws8
+#assign [class="smplayer"] $ws8
 assign [class="Steam"] $ws8
 
 # Special Rules for specific apllications
 ## floating config: floating enable border normal
 for_window [class="code"] move --no-auto-back-and-forth container to workspace $ws4
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws8; layout tabbed
-for_window [class="smplayer"] layout tabbed
+#for_window [class="smplayer"] layout tabbed
 for_window [class="qBittorrent"] layout tabbed
 for_window [class="TelegramDesktop"] layout stacking
-for_window [title="Godot Engine - "] move --no-auto-back-and-forth container to workspace $ws3
+#for_window [title="Godot Engine - "] move --no-auto-back-and-forth container to workspace $ws3
 for_window [title="(DEBUG)"] floating enable border normal; move position 1920 px 50px;
 for_window [class="Git-gui"] floating enable border normal
 for_window [class="Gitk"] floating enable border normal
