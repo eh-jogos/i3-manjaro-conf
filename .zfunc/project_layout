@@ -60,11 +60,18 @@ function project_layout(){
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
+		"3d_char_gdquest" | "3d_char_course" | "3dcc" | "gdquest_latest" )
+			project_name="3D Character with GDQuest"
+			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursosGDQuest/3dCharacter/
+			godot_project_folder=3d-char-course
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://gdquest.mavenseed.com/courses/code-a-professional-3d-character-with-godot"
+
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			;;
 		"cpp")
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh $dual_monitor
-			;;
-		"mathy")
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/JavaryMathySetup.sh $dual_monitor
 			;;
 		"alicerce" | "ali")
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh $dual_monitor
