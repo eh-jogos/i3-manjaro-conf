@@ -9,8 +9,8 @@ function godot(){
 	defalt_version=$v32
 
 	case $1 in
-		"-h | --help")
-			echo "Opens Godot. \nIf no arguments are passed it will open the default option (normally the most recent one)"
+		"-h" | "--help")
+			printf "Opens Godot. \nIf no arguments are passed it will open the default option (normally the most recent one)\n"
 			echo "Current arguments are:"
 			echo " - 21---------- opens Godot 2.1.x"
 			echo " - 30---------- opens Godot 3.0.x"

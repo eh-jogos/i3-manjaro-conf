@@ -11,8 +11,8 @@
 # Remember to comment out the original bindsym in the config.bk file
 bindsym $mod+Shift+r exec ~/.i3/customizations/build_config.sh ; restart
 
-# Lock screen
-bindsym $mod+9 exec ~/.i3/customizations/scripts/i3-lock-random-image.sh
+# Lock screen ############ COMMENT $mod+9 on conifg.bk
+bindsym $mod+Mod1+l exec ~/.i3/customizations/scripts/i3-lock-random-image.sh
 
 # These are changes to default options, search them and comment them upwards
 # The "----" Deactivates xautolock if cursor is in the any corner
@@ -32,6 +32,7 @@ exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 30
 #set $ws6 6:6:TabWork
 #set $ws7 7:7:TabOther
 #set $ws8 8:8:TabMedia
+#set $ws9 9:9:Desktop ###### add it to the commands below it and COMMENT OUT $mod+9 on conifg.bk
 
 ## Override default bindings ##
 #Remember to comment out the original lines or do this changes there
