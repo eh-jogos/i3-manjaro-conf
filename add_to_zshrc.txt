@@ -2,6 +2,8 @@
 fpath=( ~/.zfunc "${fpath[@]}" )
 autoload -Uz godot
 autoload -Uz project_layout
+autoload -Uz make_wallpaper
+autoload -Uz thumbs_board
 
 
 # ADD TO .bashrc

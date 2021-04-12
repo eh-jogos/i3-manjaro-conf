@@ -1,0 +1,24 @@
+function thumbs_board(){
+    if [[ $1 == "-h" || $1 == "--help" ]]
+    then
+        echo "Uses feh to open a all images in the current folder as a thumbnails board."
+        echo "Thumbs will have a max size of 640x360, you can specify a custom size by passing width then height."
+        echo "ex: thumbs_board 320 180"
+    else
+        width=640
+        height=360
+        
+        re='^[0-9]+$'
+        if [[ $1 =~ $re ]]
+        then
+            width=$1
+        fi
+        
+        if [[ $2 =~ $re ]]
+        then
+            height=$2
+        fi
+        
+        feh -m -s -y $width -E $height -W 1920
+    fi
+}
