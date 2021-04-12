@@ -49,6 +49,16 @@ function project_layout(){
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
+		"muto")
+			project_name="Muto Project"
+			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/ProjetosRafaArrivabene/Muto/
+			godot_project_folder=muto-project
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://app.hacknplan.com/"
+
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
 			project_name="Escape From the Cosmic Abyss"
 			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/

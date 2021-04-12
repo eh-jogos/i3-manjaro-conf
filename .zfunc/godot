@@ -6,7 +6,7 @@ function godot(){
 	v31=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/31x/Godot_v3.1.1-stable_x11.64
 	v32=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.3-stable_x11.64
 	v32_steam_folder=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x-Steam/
-	v324rc=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/324rc/Godot_v3.2.4-rc3_x11.64
+	v33a=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x-alicerce/Godot_v3.3-rc7_x11.64
 	defalt_version=$v32
 
 	case $1 in
@@ -18,6 +18,7 @@ function godot(){
 			echo " - 31---------- opens Godot 3.1.x"
 			echo " - 32---------- opens Godot 3.2.x"
 			echo " - 32-steam --- opens Custom Godot 3.2.x with Steam Module"
+			echo " - 33a--------- opens Godot 3.3-rcX with Alicerce projects"
 			;;
 		"21")
 			"$v21" "${@:2}"
@@ -31,13 +32,13 @@ function godot(){
 		"32")
 			"$v32" "${@:2}"
 			;;
-		"324")
-			"$v324rc" "${@:2}"
-			;;
 		"32-steam")
 			export LD_PRELOAD=~/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
 			cd $v32_steam_folder
 			./godot.x11.opt.tools.64 "${@:2}"
+			;;
+		"33a")
+			"$v33a" "${@:2}"
 			;;
 		*)
 			if [[ $1 != "" ]]
