@@ -2,12 +2,13 @@
 ALL_FOLDERS=()
 ALL_FOLDERS[1]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/StreetsOfRage4
 ALL_FOLDERS[2]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/LoopHero
-
-echo $ALL_FOLDERS[1]
+ALL_FOLDERS[3]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/Transistor
 
 while true 
 do
-    feh --bg-fill --randomize --no-fehbg $ALL_FOLDERS[2]/*
+    random_index=$[$RANDOM % ${#ALL_FOLDERS[@]} + 1]
+    feh --bg-fill --randomize --no-fehbg $ALL_FOLDERS[random_index]/*
+    # feh --bg-fill --randomize --no-fehbg /mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/*
     sleep 900
 done
 
