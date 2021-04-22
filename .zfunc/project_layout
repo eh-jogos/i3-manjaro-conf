@@ -33,7 +33,7 @@ function project_layout(){
 			godot_project_folder=demo-project
 			
 			firefox_tabs=()
-			firefox_tabs[1]="https://app.hacknplan.com/"
+			firefox_tabs[1]="https://app.hacknplan.com/p/126112/"
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
@@ -45,7 +45,7 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html"
 			firefox_tabs[2]="https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
-			firefox_tabs[3]="https://app.hacknplan.com/"
+			firefox_tabs[3]="https://app.hacknplan.com/p/118696/"
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
@@ -55,7 +55,7 @@ function project_layout(){
 			godot_project_folder=muto-project
 			
 			firefox_tabs=()
-			firefox_tabs[1]="https://app.hacknplan.com/"
+			firefox_tabs[1]="https://app.hacknplan.com/p/144298/"
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
