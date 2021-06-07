@@ -6,8 +6,8 @@ function godot(){
 	v31=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/31x/Godot_v3.1.1-stable_x11.64
 	v32=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.3-stable_x11.64
 	v32_steam_folder=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x-Steam/
-	v33=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x/Godot_v3.3.1-stable_x11.64
-	v33a=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x-alicerce/Godot_v3.3.1-stable_x11.64
+	v33=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x/Godot_v3.3.2-stable_x11.64
+	v33a=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x-alicerce/Godot_v3.3.2-stable_x11.64
 	defalt_version=$v33
 
 	case $1 in
