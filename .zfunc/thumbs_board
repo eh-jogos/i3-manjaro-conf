@@ -19,6 +19,6 @@ function thumbs_board(){
             height=$2
         fi
         
-        feh -m -s -y $width -E $height -W 1920
+        feh -r -m -s -y $width -E $height -W 1920
     fi
 }
