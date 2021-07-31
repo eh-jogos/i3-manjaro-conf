@@ -80,6 +80,7 @@ cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 
 
 # Open Code
+sleep 1
 i3-msg workspace $W4
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -93,27 +94,29 @@ done
 
 
 # Open Project folder and workflowy
+sleep 1
 i3-msg workspace $W6
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_LEFT
 fi
-i3-msg layout stacking
 thunar $WORK_FOLDER &
-while ! [[ "$(wmctrl -lx)" =~ "thunar.Thunar" ]] 
+while ! [[ "$(wmctrl -lx)" =~ ".Thunar" ]] 
 do
     wmctrl -lx
     echo "waiting on Thunar"
     sleep 2
 done
 $WORKFLOWY &
+i3-msg layout stacking
 while ! [[ "$(wmctrl -lx)" =~ "workflowy.WorkFlowy" ]] 
 do
     sleep 2
 done
 
 
-Open Browser and relevant tabs
+# Open Browser and relevant tabs
+sleep 1
 i3-msg workspace $W1
 if [ $DUAL_MONITORS = "true" ]
 then
@@ -137,9 +140,10 @@ fi
 
 
 # Open Godot
+sleep 1
 i3-msg workspace $W3
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
-godot 32 -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
+godot -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 

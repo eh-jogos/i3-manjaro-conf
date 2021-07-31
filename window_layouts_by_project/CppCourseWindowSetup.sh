@@ -61,31 +61,26 @@ while ! [[ "$(wmctrl -l)" =~ "WorkFlowy" ]]
 do
     sleep 2
 done
-cd $CPP_COURSE_FOLDER
-terminal 
-cd ~
-i3-msg split h
-sleep 1
 thunar $CPP_COURSE_FOLDER &
 while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
 do
     sleep 2
 done
-i3-msg move left
 if [ $DUAL_MONITORS = "true" ]
 then
     i3-msg move workspace to output $MONITOR_RIGHT
 fi
 
+
+# Open Code
+sleep 1
 i3-msg workspace $W4
-i3-msg layout stacking
-codelite &
-while ! [[ "$(wmctrl -l)" =~ "Udemy Cpp Course" ]] 
-do
-    sleep 2
-done
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_RIGHT
+    i3-msg move workspace to output $MONITOR_LEFT
 fi
-sleep 1
+code $CPP_COURSE_FOLDER
+while ! [[ "$(wmctrl -lx)" =~ "code-oss.code-oss" ]] 
+do
+    sleep 1
+done
