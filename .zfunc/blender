@@ -1,0 +1,32 @@
+function blender(){
+	# echo $1
+	# echo "${@:2}"
+	vmanjaro=blender
+	v292=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Blender/blender-2.92.0-linux64/blender
+	defalt_version=$v292
+
+	case $1 in
+		"-h" | "--help")
+			printf "Opens Godot. \nIf no arguments are passed it will open the default option (normally the most recent one)\n"
+			echo "Current arguments are:"
+			echo " - manjaro---------- opens Blender installed by manjaro's package manager"
+			echo " - 292 ------------- opens standalone Blender 2.9.2"
+			;;
+		"manjaro")
+			"$vmanjaro" "${@:2}"
+			;;
+		"292")
+			"$v292" "${@:2}"
+			;;
+		*)
+			if [[ $1 != "" ]]
+			then
+				printf "\n--WARNING--#####\n"
+				printf "Could Not Find %s." "$1"
+				printf "\n##################\n"
+			fi
+			echo "Opening default option, use -h to see all possible arguments."
+			"$defalt_version" "${@:1}"
+			;;
+	esac
+}

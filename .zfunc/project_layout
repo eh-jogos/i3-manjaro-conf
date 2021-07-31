@@ -14,7 +14,8 @@ function project_layout(){
 	fi
 	
 	generic_godot_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
-	
+	generic_blender_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericBlenderProjectSetup.sh
+
 	case $1 in
 		"ghgo2020" | "ghgo")
 			project_name="Github Gameoff 2020"
@@ -70,17 +71,15 @@ function project_layout(){
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
-		# "3d_char_gdquest" | "3d_char_course" | "3dcc" | "gdquest_latest" )
-		# 	project_name="3D Character with GDQuest"
-		# 	project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursosGDQuest/3dCharacter/
-		# 	godot_project_folder=3d-char-course
+		"blender" )
+			project_name="Blender Learning"
+			project_path="/mnt/24847D5F847D3500/Daniel/Projetos Ilustrações/Blender Courses/"
 			
-		# 	firefox_tabs=()
-		# 	firefox_tabs[1]="https://gdquest.mavenseed.com/courses/code-a-professional-3d-character-with-godot"
-		# 	firefox_tabs[2]="https://app.hacknplan.com/"
-
-		# 	$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
-		# 	;;
+			firefox_tabs=()
+			firefox_tabs[1]="https://docs.google.com/spreadsheets/d/17M1efjiGxrtlxcbbUq0dS7ht8xuuNwyDpaHgCWwJ8bw/edit#gid=1534875553"
+			
+			$generic_blender_layout $project_name $project_path $dual_monitor $firefox_tabs
+			;;
 		"cpp")
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh $dual_monitor
 			;;
