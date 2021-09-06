@@ -13,7 +13,7 @@ function project_layout(){
 		fi
 	fi
 	
-	generic_godot_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericaGodotProjectSetup.sh 
+	generic_godot_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericGodotProjectSetup.sh
 	generic_blender_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericBlenderProjectSetup.sh
 
 	case $1 in
@@ -60,6 +60,17 @@ function project_layout(){
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
+		"monster_outbreak" | "gm-mo")
+			project_name="Game Muncher's Monster Oubreak Project"
+			project_path=/mnt/24847D5F847D3500/Daniel/Trabalhos/GameMunchers/monster_outbreak
+			godot_project_folder=mo-project
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://www.worldtimebuddy.com/?pl=1&lid=3448439,1642911,6167865,524901&h=3448439&hf=1"
+			firefox_tabs[2]="https://trello.com/b/1OBRvpOX/game-modes"
+			
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
 			project_name="Escape From the Cosmic Abyss"
 			project_path=/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
@@ -86,6 +97,16 @@ function project_layout(){
 		"alicerce" | "ali")
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh $dual_monitor
 			;;
+		"gdq-arpg")
+			project_name="GDQuest old ActionRPG Course"
+			project_path="/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursosGDQuest/ActionRPG"
+			godot_project_folder="03.intro-to-pattern-based-monster-ai/project"
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://app.hacknplan.com/p/150905/"
+
+			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			;;
 		*)
 			echo "project_layout needs to receive one argument that is the project name or alias"
 			echo "\nCurrent aliases are:"
@@ -95,6 +116,9 @@ function project_layout(){
 			echo " - Dungeon Crawler On Rails Shooter ------------- dcors"
 			echo " - Escape From the Cosmic Abyss ----------------- cosmic_abyss | escape_abyss | cosmic | abyss"
 			echo " - Alicerce ------------------------------------- alicerce | ali"
+			echo " - Blender Learning ----------------------------- blender"
+			echo " - Monster Outbreak ----------------------------- monster_outbreak | gm-mo"
+			echo " - GDQuest ARPG Course -------------------------- gdq-arpg"
 			;;
 	esac
 }
