@@ -31,28 +31,38 @@ W7=7:7:TabOther
 W8=8:8:TabMedia
 
 SETUP_NAME=$1
+WORK_FOLDER=$2
+GODOT_PROJECT_FOLDER=$3
+FIREFOX_TABS=( ${@:6} )
+
 DUAL_MONITORS=true
 if [ ! -z "$4" ]
 then
-    if [ $4 = "false" ]
-    then
-        DUAL_MONITORS=false
-        echo "Single Monitor Setup for $SETUP_NAME"
-    elif [ $4 != "true" ]
-    then
-        echo "$SETUP_NAME || unrecognized option: $4 | Going with default (Dual Monitor)"
-    else
-        echo "Dual Monitor Setup for $SETUP_NAME"
-    fi
+	if [ $4 = "false" ]
+	then
+		DUAL_MONITORS=false
+		echo "Single Monitor Setup for $SETUP_NAME"
+	elif [ $4 != "true" ]
+	then
+		echo "$SETUP_NAME || unrecognized option: $4 | Going with default (Dual Monitor)"
+	else
+		echo "Dual Monitor Setup for $SETUP_NAME"
+	fi
 else
-    echo "Dual Monitor Setup for $SETUP_NAME"
+	echo "Dual Monitor Setup for $SETUP_NAME"
+fi
+
+ALTERNATE_GODOT=$5
+if [ "$5" = "latest" ]
+then
+	ALTERNATE_GODOT=""
+else
+	echo "Will use custom Godot path $ALTERNATE_GODOT"
 fi
 
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 
-WORK_FOLDER=$2
-GODOT_PROJECT_FOLDER=$3
 
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0
@@ -74,7 +84,7 @@ i3-msg move container to workspace $W2
 i3-msg workspace $W2
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_LEFT
+	i3-msg move workspace to output $MONITOR_LEFT
 fi
 cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 
@@ -84,12 +94,12 @@ sleep 1
 i3-msg workspace $W4
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_LEFT
+	i3-msg move workspace to output $MONITOR_LEFT
 fi
 code $WORK_FOLDER/$GODOT_PROJECT_FOLDER
 while ! [[ "$(wmctrl -lx)" =~ "code-oss.code-oss" ]] 
 do
-    sleep 1
+	sleep 1
 done
 
 
@@ -98,20 +108,20 @@ sleep 1
 i3-msg workspace $W6
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_LEFT
+	i3-msg move workspace to output $MONITOR_LEFT
 fi
 thunar $WORK_FOLDER &
 while ! [[ "$(wmctrl -lx)" =~ ".Thunar" ]] 
 do
-    wmctrl -lx
-    echo "waiting on Thunar"
-    sleep 2
+	wmctrl -lx
+	echo "waiting on Thunar"
+	sleep 2
 done
 $WORKFLOWY &
 i3-msg layout stacking
 while ! [[ "$(wmctrl -lx)" =~ "workflowy.WorkFlowy" ]] 
 do
-    sleep 2
+	sleep 2
 done
 
 
@@ -120,22 +130,22 @@ sleep 1
 i3-msg workspace $W1
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_LEFT
+	i3-msg move workspace to output $MONITOR_LEFT
 fi
 firefox --new-window "https://docs.google.com/spreadsheets/"
 sleep 3
 firefox --new-tab "https://pomodoro-tracker.com/"
 i3-msg layout stacking
 sleep 1
-if [ ! -z "$5" ]
+if [ ! -z "$FIREFOX_TABS" ]
 then
-    for url in ${@:5};
-    do
-        firefox --new-tab $url
-        sleep 1
-    done
+	for url in ${FIREFOX_TABS[@]};
+	do
+		firefox --new-tab $url
+		sleep 1
+	done
 else
-    echo "No additional Firefox tabs"
+	echo "No additional Firefox tabs"
 fi
 
 
@@ -144,6 +154,16 @@ sleep 1
 i3-msg workspace $W3
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_RIGHT
+	i3-msg move workspace to output $MONITOR_RIGHT
 fi
-godot -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
+
+if [[ -z $ALTERNATE_GODOT ]]
+then
+	godot -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
+else
+	parent_folder=$(dirname $ALTERNATE_GODOT)
+	cd $parent_folder
+	$ALTERNATE_GODOT -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
+fi
+
+exit 0

@@ -15,7 +15,8 @@ function project_layout(){
 	
 	generic_godot_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericGodotProjectSetup.sh
 	generic_blender_layout=/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/GenericBlenderProjectSetup.sh
-
+	godot_path="latest"
+	
 	case $1 in
 		"ghgo2020" | "ghgo")
 			project_name="Github Gameoff 2020"
@@ -64,12 +65,13 @@ function project_layout(){
 			project_name="Game Muncher's Monster Oubreak Project"
 			project_path=/mnt/24847D5F847D3500/Daniel/Trabalhos/GameMunchers/monster_outbreak
 			godot_project_folder=mo-project
+			godot_path="/mnt/24847D5F847D3500/Daniel/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64"
 			
 			firefox_tabs=()
-			firefox_tabs[1]="https://www.worldtimebuddy.com/?pl=1&lid=3448439,1642911,6167865,524901&h=3448439&hf=1"
-			firefox_tabs[2]="https://trello.com/b/1OBRvpOX/game-modes"
+			firefox_tabs[1]="https://www.timeanddate.com/worldclock/personal.html"
+			firefox_tabs[2]="https://freedom-games-testing.codecks.io/decks"
 			
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
 			project_name="Escape From the Cosmic Abyss"
@@ -107,6 +109,17 @@ function project_layout(){
 
 			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
 			;;
+		"toucanoban")
+			project_name="Canopy Game's Toucanoban course"
+			project_path="/mnt/24847D5F847D3500/Daniel/ProjetosGames/CursosCanopy/ToucanobanCourse/"
+			godot_project_folder="project/"
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://app.hacknplan.com/p/157358/"
+			firefox_tabs[2]="https://www.canopy.games/courses/1579099/lectures/36079172"
+
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			;;
 		*)
 			echo "project_layout needs to receive one argument that is the project name or alias"
 			echo "\nCurrent aliases are:"
@@ -119,6 +132,7 @@ function project_layout(){
 			echo " - Blender Learning ----------------------------- blender"
 			echo " - Monster Outbreak ----------------------------- monster_outbreak | gm-mo"
 			echo " - GDQuest ARPG Course -------------------------- gdq-arpg"
+			echo " - Canopy's Toucanoban Course ------------------- toucanoban"
 			;;
 	esac
 }
