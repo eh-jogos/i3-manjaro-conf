@@ -42,6 +42,15 @@ bindsym $mod+F4 exec spotify
 bindsym $mod+F5 exec smplayer
 bindsym $mod+F6 exec code
 bindsym $mod+Print exec --no-startup-id i3-scrot -w
+bindsym Print exec --no-startup-id xfce4-screenshooter -c --fullscreen
+bindsym $mod+Print --release exec --no-startup-id xfce4-screenshooter -c --window
+bindsym $mod+Shift+Print --release exec --no-startup-id xfce4-screenshooter -c --region
+
+# open xfce4 screenshot dialog for something more customized, with delay ot whatever
+bindsym $mod+Ctrl+Print --release exec --no-startup-id xfce4-screenshooter
+# Flameshot for something even more customized but better with Region
+bindsym $mod+Ctrl+Shift+Print --release exec --no-startup-id flameshot
+
 
 # ----------------------------------------------------------------------------------------
 
@@ -97,12 +106,17 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 exec --no-startup-id blueman-applet
 exec_always --no-startup-id sbxkb
 
+# These are stuff I'm replacing, remember to install the software AND comment the original/equivalent lines on the config
+# replacing clipit
+exec --no-startup-id xfce4-clipman-plugin 
+
 # These are new, remember to install the software
 exec_always --no-startup-id optimus-manager-qt
 exec --no-startup-id qbittorrent
 exec --no-startup-id ~/.fehbg
 exec firefox
 exec steam
+
 
 # ----------------------------------------------------------------------------------------
 
