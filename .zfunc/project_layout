@@ -27,7 +27,7 @@ function project_layout(){
 			firefox_tabs[1]="https://itch.io/dashboard"
 			firefox_tabs[2]="https://trello.com/b/zmqqqMzA/jenga-de-shots"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"gamejolt_api" | "gjapi")
 			project_name="Godot GameJolt API plugin"
@@ -37,7 +37,7 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/126112/"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"dcors")
 			project_name="DCORS Project"
@@ -49,7 +49,7 @@ function project_layout(){
 			firefox_tabs[2]="https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
 			firefox_tabs[3]="https://app.hacknplan.com/p/118696/"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"muto")
 			project_name="Muto Project"
@@ -59,7 +59,7 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/144298/"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"monster_outbreak" | "gm-mo")
 			project_name="Game Muncher's Monster Oubreak Project"
@@ -69,7 +69,7 @@ function project_layout(){
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://www.timeanddate.com/worldclock/personal.html"
-			firefox_tabs[2]="https://freedom-games-testing.codecks.io/decks"
+			firefox_tabs[2]="https://freedom-games-testing.codecks.io"
 			
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
@@ -82,7 +82,7 @@ function project_layout(){
 			firefox_tabs[1]="https://partner.steamgames.com/"
 			firefox_tabs[2]="https://itch.io/dashboard"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"blender" )
 			project_name="Blender Learning"
@@ -107,7 +107,7 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/150905/"
 
-			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $firefox_tabs
+			/mnt/24847D5F847D3500/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"toucanoban")
 			project_name="Canopy Game's Toucanoban course"
@@ -116,7 +116,7 @@ function project_layout(){
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/157358/"
-			firefox_tabs[2]="https://www.canopy.games/courses/1579099/lectures/36079172"
+			firefox_tabs[2]="https://www.canopy.games/courses/1579099/"
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;

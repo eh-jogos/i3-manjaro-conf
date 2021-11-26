@@ -7,8 +7,8 @@ function godot(){
 	v32=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x/Godot_v3.2.3-stable_x11.64
 	v32_steam_folder=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/32x-Steam/
 	v33=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x/Godot_v3.3.4-stable_x11.64
-	v33a=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x-alicerce/Godot_v3.3.4-stable_x11.64
 	v34=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/34x/Godot_v3.4-stable_x11.64
+	vali=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Godot/33x-alicerce/Godot_v3.4-stable_x11.64
 	defalt_version=$v34
 
 	case $1 in
@@ -21,7 +21,7 @@ function godot(){
 			echo " - 32---------- opens Godot 3.2.x"
 			echo " - 32-steam --- opens Custom Godot 3.2.x with Steam Module"
 			echo " - 33---------- opens Godot 3.3.x"
-			echo " - 33a--------- opens Godot 3.3.x with Alicerce projects"
+			echo " - ali--------- opens Godot 3.3.x with Alicerce projects"
 			echo " - 34---------- opens Godot 3.4.x"
 			;;
 		"21")
@@ -44,8 +44,8 @@ function godot(){
 		"33")
 			"$v33" "${@:2}"
 			;;
-		"33a")
-			"$v33a" "${@:2}"
+		"ali")
+			"$vali" "${@:2}"
 			;;
 		"34")
 			"$v34" "${@:2}"
