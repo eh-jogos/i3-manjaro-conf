@@ -53,7 +53,7 @@ WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 
 WORK_FOLDER=$2
 GODOT_PROJECT_FOLDER=$3
-COURSE_FOLDER="/mnt/24847D5F847D3500/Livros e Tutoriais/GDQuestCourses/GDQuest Godot/ActionRPGCourse"
+COURSE_FOLDER="/mnt/HD_DATA/Livros e Tutoriais/GDQuestCourses/GDQuest Godot/ActionRPGCourse"
 
 MONITOR_LEFT=eDP-1-1
 MONITOR_RIGHT=HDMI-0

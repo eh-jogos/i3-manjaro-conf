@@ -38,19 +38,18 @@ exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer 30
 #Remember to comment out the original lines or do this changes there
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
-bindsym $mod+F4 exec spotify
 bindsym $mod+F5 exec smplayer
-bindsym $mod+F6 exec code
-bindsym $mod+Print exec --no-startup-id i3-scrot -w
 bindsym Print exec --no-startup-id xfce4-screenshooter -c --fullscreen
 bindsym $mod+Print --release exec --no-startup-id xfce4-screenshooter -c --window
 bindsym $mod+Shift+Print --release exec --no-startup-id xfce4-screenshooter -c --region
 
+# These are new ones
+bindsym $mod+F4 exec spotify
+bindsym $mod+F6 exec code
 # open xfce4 screenshot dialog for something more customized, with delay ot whatever
 bindsym $mod+Ctrl+Print --release exec --no-startup-id xfce4-screenshooter
 # Flameshot for something even more customized but better with Region
 bindsym $mod+Ctrl+Shift+Print --release exec --no-startup-id flameshot
-
 
 # ----------------------------------------------------------------------------------------
 
@@ -76,14 +75,14 @@ default_floating_border normal 5
 # Media volume controls
 
 # ALSA? I think I'm using alsa now but the commands below are also working
-bindsym XF86AudioMute exec amixer sset 'Master' toggle
-bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
-bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+# bindsym XF86AudioMute exec amixer sset 'Master' toggle
+# bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+# bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
 # Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -188,6 +187,5 @@ for_window [title="(DEBUG)"] floating enable border normal; move position 1920 p
 for_window [class="Git-gui"] floating enable border normal
 for_window [class="Gitk"] floating enable border normal
 for_window [class="Gnome-calculator"] floating enable border normal
-for_window [class="Codelite-terminal"] floating enable border normal
 
 # ----------------------------------------------------------------------------------------

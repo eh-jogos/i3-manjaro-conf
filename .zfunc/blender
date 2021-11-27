@@ -2,7 +2,7 @@ function blender(){
 	# echo $1
 	# echo "${@:2}"
 	vmanjaro=blender
-	v292=/mnt/24847D5F847D3500/Daniel/00_Resources/_softwares/Blender/blender-2.92.0-linux64/blender
+	v292=/mnt/HD_DATA/Daniel/00_Resources/_softwares/Blender/blender-2.92.0-linux64/blender
 	defalt_version=$v292
 
 	case $1 in

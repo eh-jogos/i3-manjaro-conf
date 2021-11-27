@@ -1,0 +1,13 @@
+function click_locations(){
+	delay=2
+	if [[ -n $1 ]]
+	then
+		delay=$1
+	fi
+	
+	while true
+	do
+		xdotool click 1
+		sleep $delay
+	done
+}
