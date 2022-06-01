@@ -55,8 +55,8 @@ WORK_FOLDER=$2
 GODOT_PROJECT_FOLDER=$3
 COURSE_FOLDER="/mnt/HD_DATA/Livros e Tutoriais/GDQuestCourses/GDQuest Godot/ActionRPGCourse"
 
-MONITOR_LEFT=eDP-1-1
-MONITOR_RIGHT=HDMI-0
+MONITOR_LEFT=eDP-1
+MONITOR_RIGHT=HDMI-1-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
 
 fpath=( ~/.zfunc "${fpath[@]}" )

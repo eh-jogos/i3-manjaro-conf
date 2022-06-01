@@ -64,8 +64,8 @@ fi
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
 
 
-MONITOR_LEFT=eDP-1-1
-MONITOR_RIGHT=HDMI-0
+MONITOR_LEFT=eDP-1
+MONITOR_RIGHT=HDMI-1-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
 
 fpath=( ~/.zfunc "${fpath[@]}" )
@@ -163,7 +163,7 @@ then
 else
 	parent_folder=$(dirname $ALTERNATE_GODOT)
 	cd $parent_folder
-	$ALTERNATE_GODOT -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
+	prime-run $ALTERNATE_GODOT -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
 fi
 
 exit 0
