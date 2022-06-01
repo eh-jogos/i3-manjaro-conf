@@ -99,6 +99,19 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 
 
 # ----------------------------------------------------------------------------------------
+### Mouse Bindings ###
+
+bindsym --whole-window $mod+Ctrl+button3 exec playerctl play-pause
+
+# The middle button and a modifer over any part of the window kills the window
+bindsym --whole-window $mod+Ctrl+n exec "xdotool mousedown 1"
+bindsym --whole-window $mod+button2 kill
+bindsym --whole-window $mod+Shift+button2 xkill
+
+# ----------------------------------------------------------------------------------------
+
+
+# ----------------------------------------------------------------------------------------
 ### AutoStart Applications ###
 # If you wish to use bluetooth and/or you need to use multiple Keyboard
 # layouts, I just copied the original commands here and uncommented them
@@ -107,7 +120,7 @@ exec_always --no-startup-id sbxkb
 
 # These are stuff I'm replacing, remember to install the software AND comment the original/equivalent lines on the config
 # replacing clipit
-exec --no-startup-id xfce4-clipman-plugin 
+exec xfce4-clipman
 
 # These are new, remember to install the software
 exec_always --no-startup-id optimus-manager-qt
