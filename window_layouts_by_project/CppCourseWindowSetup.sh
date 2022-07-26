@@ -31,7 +31,7 @@ fi
 
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
-CPP_COURSE_FOLDER=/mnt/HD_DATA/Daniel/ProjetosCode/UdemyCppCourse/CppCourse/
+CPP_COURSE_FOLDER="/mnt/WORK_SSD/eh_jogos/ProjetosCode/UdemyCppCourse/CppCourseVSC/"
 MONITOR_LEFT=eDP-1
 MONITOR_RIGHT=HDMI-1-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"
@@ -62,9 +62,11 @@ do
     sleep 2
 done
 thunar $CPP_COURSE_FOLDER &
-while ! [[ "$(wmctrl -l)" =~ "File Manager" ]] 
+while ! [[ "$(wmctrl -lx)" =~ ".Thunar" ]] 
 do
-    sleep 2
+	wmctrl -lx
+	echo "waiting on Thunar"
+	sleep 2
 done
 if [ $DUAL_MONITORS = "true" ]
 then

@@ -1,0 +1,38 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		// eh_Utilities as subtree ----------------------------------------------------------------
+		// Must be executed just once, the before the first pull
+		{
+			"label": "Add utilities subtree",
+			"type": "shell",
+			"command": "git subtree add --prefix addons/eh_jogos.utilities https://github.com/eh-jogos/eh_Utilities.git submodule --squash",
+			"problemMatcher": [],
+		},
+		{
+			"label": "Pull utilities subtree",
+			"type": "shell",
+			"command": "git subtree pull -P addons/eh_jogos.utilities https://github.com/eh-jogos/eh_Utilities.git submodule --squash",
+			"problemMatcher": [],
+		}
+		// Will create a branch with only the history of the prefixed folder. Useful for previsualizing changes made to the
+		// subtree before pusing it back to it's origin.
+		{
+			"label": "Split utilities subtree",
+			"type": "shell",
+			"command": "git subtree split -P addons/eh_jogos.utilities -b ${workspaceFolderBasename}-subtree",
+			"problemMatcher": [],
+		},
+		// Will first split the history into a new branch like the split task, but instead of generating a local branch
+		// it will push it to the original repository, there you can merge it or do whatever
+		{
+			"label": "Push utilities subtree",
+			"type": "shell",
+			"command": "git subtree push -P addons/eh_jogos.utilities https://github.com/eh-jogos/eh_Utilities.git ${workspaceFolderBasename}-subtree",
+			"problemMatcher": [],
+		},
+		// END OF eh_Utilities as subtree ---------------------------------------------------------
+	]
+}

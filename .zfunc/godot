@@ -8,9 +8,9 @@ function godot(){
 	v32_steam_folder=/mnt/WORK_SSD/Godot/32x-Steam/
 	v33=/mnt/WORK_SSD/Godot/33x/Godot_v3.3.4-stable_x11.64
 	v34=/mnt/WORK_SSD/Godot/34x/Godot_v3.4.4-stable_x11.64
-	v40=/mnt/WORK_SSD/Godot/40x/Godot_v4.0-alpha8_linux.64
-	vali=/mnt/WORK_SSD/Godot/alicerce/Godot_v3.4.4-stable_x11.64
+	v40=/mnt/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64
 	vmo=/mnt/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64
+	vkaru=/mnt/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/karu_project/.godot_steam_binaries/GodotSteam-3.4.4-stable-editor-x11.64
 	defalt_version=$v34
 
 	case $1 in
@@ -23,10 +23,10 @@ function godot(){
 			echo " - 32---------- opens Godot 3.2.x"
 			echo " - 32-steam --- opens Custom Godot 3.2.x with Steam Module"
 			echo " - 33---------- opens Godot 3.3.x"
-			echo " - ali--------- opens Godot 3.x with Alicerce projects"
-			echo " - mo --------- opens custom Godot with steam with Monster Outbreak project"
 			echo " - 34 --------- opens Godot 3.4.x"
 			exho " - 40 --------- opens Godot 4.0.0 alpha 8"
+			echo " - mo --------- opens custom Godot with steam with Monster Outbreak project"
+			echo " - karu ------- opens custom Godot with steam for Karu project"
 			;;
 		"21")
 			prime-run "$v21" "${@:2}"
@@ -51,6 +51,12 @@ function godot(){
 		"ali")
 			prime-run "$vali" "${@:2}"
 			;;
+		"34")
+			prime-run "$v34" "${@:2}"
+			;;
+		"40")
+			prime-run "$v40" "${@:2}"
+			;;
 		"mo")
 			previous_folder="$(pwd)"
 			parent_folder=$(dirname $vmo)
@@ -58,11 +64,15 @@ function godot(){
 			prime-run "$vmo" "${@:2}" &
 			cd $previous_folder
 			;;
-		"34")
-			prime-run "$v34" "${@:2}"
-			;;
-		"40")
-			prime-run "$v40" "${@:2}"
+		"karu")
+			previous_folder="$(pwd)"
+			parent_folder=$(dirname $vmo)
+			# we have to enter the folder so that the godot has the context of the
+			# steam libraries around it
+			cd $parent_folder
+			export LD_PRELOAD=~/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
+			prime-run "$vkaru" "${@:2}" &
+			cd $previous_folder
 			;;
 		*)
 			if [[ $1 != "" ]]

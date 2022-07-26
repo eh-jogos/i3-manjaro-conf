@@ -109,14 +109,35 @@ function project_layout(){
 
 			/mnt/WORK_SSD/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
-		"toucanoban")
-			project_name="Canopy Game's Toucanoban course"
-			project_path="/mnt/WORK_SSD/eh_jogos/ProjetosGames/CursosCanopy/ToucanobanCourse/"
-			godot_project_folder="project/"
+		"karu")
+			project_name="KaRu VN"
+			project_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/"
+			godot_project_folder="karu_project/"
 			
 			firefox_tabs=()
-			firefox_tabs[1]="https://app.hacknplan.com/p/157358/"
-			firefox_tabs[2]="https://www.canopy.games/courses/1579099/"
+			firefox_tabs[1]="https://trello.com/b/F5HdWf1V/karuv2"
+
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			;;
+		"shadow_ocean")
+			project_name="Shadow Ocean"
+			project_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/ShadowOcean/"
+			godot_project_folder="shadow-ocean/"
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://www.notion.so/b00c086964644e94a765e8c2cbac7701?v=27dc5f07d4a74563b2dfe18dacbc45a0"
+
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			;;
+		"quiver")
+			project_name="Quiver Projects"
+			project_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/Quiver/Templates/BeatemUp/"
+			godot_project_folder="template_beat_project/"
+			godot_path="/mnt/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64"
+			
+			firefox_tabs=()
+			firefox_tabs[1]="https://github.com/orgs/quiver-dev/projects/4/views/2"
+			firefox_tabs[2]="https://app.letsdeel.com/contract/mq2n4rx"
 
 			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
@@ -132,7 +153,9 @@ function project_layout(){
 			echo " - Blender Learning ----------------------------- blender"
 			echo " - Monster Outbreak ----------------------------- monster_outbreak | gm-mo"
 			echo " - GDQuest ARPG Course -------------------------- gdq-arpg"
-			echo " - Canopy's Toucanoban Course ------------------- toucanoban"
+			echo " - KaRu VN -------------------------------------- karu"
+			echo " - Shadow Ocean --------------------------------- shadow_ocean"
+			echo " - Quiver Projects ------------------------------ quiver"
 			;;
 	esac
 }
