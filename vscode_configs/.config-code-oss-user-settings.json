@@ -1,0 +1,34 @@
+{
+    "files.associations": {
+        "**/.i3/config": "i3",
+		"**/.i3/config.bk": "i3",
+		"**/customizations/my_manjaro_custom_configs.txt": "i3",
+        "**/.zfunc/*": "shellscript",
+    },
+	"[gdscript]": {
+        "editor.autoIndent": "advanced",
+		"editor.trimAutoWhitespace": false,
+		"editor.insertSpaces": false,
+	},
+    "[cpp]": {
+        "editor.insertSpaces": false,
+		"editor.wordBasedSuggestions": false,
+		"editor.suggest.insertMode": "replace",
+		"editor.semanticHighlighting.enabled": true
+	},
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"git-graph.dialog.createBranch.checkOut": true,
+	"git-graph.repository.commits.mute.commitsThatAreNotAncestorsOfHead": true,
+    "git-graph.maxDepthOfRepoSearch": 1,
+	"git-graph.dialog.fetchRemote.prune": true,
+	"git-graph.repository.fetchAndPrune": true,
+	"git-graph.repository.onLoad.scrollToHead": true,
+    "git.pruneOnFetch": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.trimAutoWhitespace": false,
+}
