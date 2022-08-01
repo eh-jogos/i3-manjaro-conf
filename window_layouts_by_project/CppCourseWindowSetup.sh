@@ -31,7 +31,7 @@ fi
 
 # PATHS
 WORKFLOWY=/opt/WorkFlowy-x86_64.AppImage
-CPP_COURSE_FOLDER="/mnt/WORK_SSD/eh_jogos/ProjetosCode/UdemyCppCourse/CppCourseVSC/"
+CPP_COURSE_FOLDER=~/WORK_SSD/eh_jogos/ProjetosCode/UdemyCppCourse/CppCourseVSC/
 MONITOR_LEFT=eDP-1
 MONITOR_RIGHT=HDMI-1-0
 CURRENT_WORKSPACE="$(i3-msg -t get_workspaces | jq '.[] | select(.focused == true)' | jq .name)"

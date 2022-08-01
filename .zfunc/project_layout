@@ -13,14 +13,14 @@ function project_layout(){
 		fi
 	fi
 	
-	generic_godot_layout=/mnt/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/GenericGodotProjectSetup.sh
-	generic_blender_layout=/mnt/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/GenericBlenderProjectSetup.sh
+	generic_godot_layout=~/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/GenericGodotProjectSetup.sh
+	generic_blender_layout=~/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/GenericBlenderProjectSetup.sh
 	godot_path="latest"
 	
 	case $1 in
 		"ghgo2020" | "ghgo")
 			project_name="Github Gameoff 2020"
-			project_path=/mnt/WORK_SSD/eh_jogos/ProjetosGames/GHGO2020-Moonshot//
+			project_path=~/WORK_SSD/eh_jogos/ProjetosGames/GHGO2020-Moonshot//
 			godot_project_folder=Project
 			
 			firefox_tabs=()
@@ -31,7 +31,7 @@ function project_layout(){
 			;;
 		"gamejolt_api" | "gjapi")
 			project_name="Godot GameJolt API plugin"
-			project_path=/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/
+			project_path=~/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/
 			godot_project_folder=demo-project
 			
 			firefox_tabs=()
@@ -41,7 +41,7 @@ function project_layout(){
 			;;
 		"dcors")
 			project_name="DCORS Project"
-			project_path=/mnt/WORK_SSD/eh_jogos/ProjetosGames/DCORS
+			project_path=~/WORK_SSD/eh_jogos/ProjetosGames/DCORS
 			godot_project_folder=dcors-project
 			
 			firefox_tabs=()
@@ -53,7 +53,7 @@ function project_layout(){
 			;;
 		"muto")
 			project_name="Muto Project"
-			project_path=/mnt/WORK_SSD/eh_jogos/ProjetosGames/ProjetosRafaArrivabene/Muto/
+			project_path=~/WORK_SSD/eh_jogos/ProjetosGames/ProjetosRafaArrivabene/Muto/
 			godot_project_folder=muto-project
 			
 			firefox_tabs=()
@@ -63,9 +63,9 @@ function project_layout(){
 			;;
 		"monster_outbreak" | "gm-mo")
 			project_name="Game Muncher's Monster Oubreak Project"
-			project_path=/mnt/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak
+			project_path=~/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak
 			godot_project_folder=mo-project
-			godot_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64"
+			godot_path=~/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://www.timeanddate.com/worldclock/personal.html"
@@ -75,7 +75,7 @@ function project_layout(){
 			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
 			project_name="Escape From the Cosmic Abyss"
-			project_path=/mnt/WORK_SSD/eh_jogos/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
+			project_path=~/WORK_SSD/eh_jogos/ProjetosGames/CursoUdemy/EscapeFromTheCosmicAbyss/
 			godot_project_folder=GameSteam
 			
 			firefox_tabs=()
@@ -94,24 +94,24 @@ function project_layout(){
 			$generic_blender_layout $project_name $project_path $dual_monitor $firefox_tabs
 			;;
 		"cpp")
-			/mnt/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh $dual_monitor
+			~/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/CppCourseWindowSetup.sh $dual_monitor
 			;;
 		"alicerce" | "ali")
-			/mnt/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh $dual_monitor
+			~/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/AlicerceWindowSetup.sh $dual_monitor
 			;;
 		"gdq-arpg")
 			project_name="GDQuest old ActionRPG Course"
-			project_path="/mnt/WORK_SSD/eh_jogos/ProjetosGames/CursosGDQuest/ActionRPG"
+			project_path=~/WORK_SSD/eh_jogos/ProjetosGames/CursosGDQuest/ActionRPG
 			godot_project_folder="03.intro-to-pattern-based-monster-ai/project"
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/150905/"
 
-			/mnt/WORK_SSD/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			~/WORK_SSD/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
 			;;
 		"karu")
 			project_name="KaRu VN"
-			project_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/"
+			project_path=~/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/
 			godot_project_folder="karu_project/"
 			
 			firefox_tabs=()
@@ -121,7 +121,7 @@ function project_layout(){
 			;;
 		"shadow_ocean")
 			project_name="Shadow Ocean"
-			project_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/ShadowOcean/"
+			project_path=~/WORK_SSD/eh_jogos/Trabalhos/ShadowOcean/
 			godot_project_folder="shadow-ocean/"
 			
 			firefox_tabs=()
@@ -131,9 +131,9 @@ function project_layout(){
 			;;
 		"quiver")
 			project_name="Quiver Projects"
-			project_path="/mnt/WORK_SSD/eh_jogos/Trabalhos/Quiver/Templates/BeatemUp/"
+			project_path=~/WORK_SSD/eh_jogos/Trabalhos/Quiver/Templates/BeatemUp/
 			godot_project_folder="template_beat_project/"
-			godot_path="/mnt/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64"
+			godot_path=~/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://github.com/orgs/quiver-dev/projects/4/views/2"

@@ -30,8 +30,13 @@ W6=6:6:TabWork
 W7=7:7:TabOther
 W8=8:8:TabMedia
 
+
+function get_absolute_path(){
+	echo -e "$(realpath "$1")"
+}
+
 SETUP_NAME=$1
-WORK_FOLDER=$2
+WORK_FOLDER=$(get_absolute_path $2)
 GODOT_PROJECT_FOLDER=$3
 FIREFOX_TABS=( ${@:6} )
 
@@ -52,7 +57,7 @@ else
 	echo "Dual Monitor Setup for $SETUP_NAME"
 fi
 
-ALTERNATE_GODOT=$5
+ALTERNATE_GODOT=$(get_absolute_path $5)
 if [ "$5" = "latest" ]
 then
 	ALTERNATE_GODOT=""
@@ -87,7 +92,6 @@ then
 	i3-msg move workspace to output $MONITOR_LEFT
 fi
 cd $WORK_FOLDER/$GODOT_PROJECT_FOLDER
-
 
 # Open Code
 sleep 1

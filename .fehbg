@@ -1,19 +1,19 @@
 #!/bin/zsh
 ALL_FOLDERS=()
-ALL_FOLDERS[1]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/StreetsOfRage4
-ALL_FOLDERS[2]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/LoopHero
-ALL_FOLDERS[3]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/Transistor
-ALL_FOLDERS[4]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/Pyre
-ALL_FOLDERS[5]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/SayonaraWildHerarts
-ALL_FOLDERS[6]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/Necrodancer/
-ALL_FOLDERS[7]=/mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/FellowTraveler
+ALL_FOLDERS[1]=~/Wallpapers/Desktop/StreetsOfRage4
+ALL_FOLDERS[2]=~/Wallpapers/Desktop/LoopHero
+ALL_FOLDERS[3]=~/Wallpapers/Desktop/Transistor
+ALL_FOLDERS[4]=~/Wallpapers/Desktop/Pyre
+ALL_FOLDERS[5]=~/Wallpapers/Desktop/SayonaraWildHerarts
+ALL_FOLDERS[6]=~/Wallpapers/Desktop/Necrodancer/
+ALL_FOLDERS[7]=~/Wallpapers/Desktop/FellowTraveler
 
 
 while true 
 do
     random_index=$[$RANDOM % ${#ALL_FOLDERS[@]} + 1]
     feh --bg-fill --randomize --no-fehbg $ALL_FOLDERS[random_index]/*
-    # feh --bg-fill --randomize --no-fehbg /mnt/24847D5F847D3500/Daniel/Wallpapers/Desktop/*
+    # feh --bg-fill --randomize --no-fehbg ~/Wallpapers/Desktop/*
     sleep 900
 done
 

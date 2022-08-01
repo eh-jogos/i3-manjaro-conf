@@ -1,16 +1,16 @@
 function godot(){
 	# echo $1
 	# echo "${@:2}"
-	v21=/mnt/WORK_SSD/Godot/21x/Godot_v2.1.6-stable_x11.64
-	v30=/mnt/WORK_SSD/Godot/30x/Godot_v3.0.6-stable_x11.64
-	v31=/mnt/WORK_SSD/Godot/31x/Godot_v3.1.1-stable_x11.64
-	v32=/mnt/WORK_SSD/Godot/32x/Godot_v3.2.3-stable_x11.64
-	v32_steam_folder=/mnt/WORK_SSD/Godot/32x-Steam/
-	v33=/mnt/WORK_SSD/Godot/33x/Godot_v3.3.4-stable_x11.64
-	v34=/mnt/WORK_SSD/Godot/34x/Godot_v3.4.4-stable_x11.64
-	v40=/mnt/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64
-	vmo=/mnt/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64
-	vkaru=/mnt/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/karu_project/.godot_steam_binaries/GodotSteam-3.4.4-stable-editor-x11.64
+	v21=~/WORK_SSD/Godot/21x/Godot_v2.1.6-stable_x11.64
+	v30=~/WORK_SSD/Godot/30x/Godot_v3.0.6-stable_x11.64
+	v31=~/WORK_SSD/Godot/31x/Godot_v3.1.1-stable_x11.64
+	v32=~/WORK_SSD/Godot/32x/Godot_v3.2.3-stable_x11.64
+	v32_steam_folder=~/WORK_SSD/Godot/32x-Steam/
+	v33=~/WORK_SSD/Godot/33x/Godot_v3.3.4-stable_x11.64
+	v34=~/WORK_SSD/Godot/34x/Godot_v3.4.4-stable_x11.64
+	v40=~/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64
+	vmo=~/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64
+	vkaru=~/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/karu_project/.godot_steam_binaries/GodotSteam-3.4.4-stable-editor-x11.64
 	defalt_version=$v34
 
 	case $1 in
