@@ -51,6 +51,8 @@ bindsym $mod+Ctrl+Print --release exec --no-startup-id xfce4-screenshooter
 # Flameshot for something even more customized but better with Region
 bindsym $mod+Ctrl+Shift+Print --release exec --no-startup-id flameshot
 
+bindsym --release $mod+Shift+x exec xkill
+
 # ----------------------------------------------------------------------------------------
 
 
@@ -106,7 +108,6 @@ bindsym --whole-window $mod+Ctrl+button3 exec playerctl play-pause
 # The middle button and a modifer over any part of the window kills the window
 bindsym --whole-window $mod+Ctrl+n exec "xdotool mousedown 1"
 bindsym --whole-window $mod+button2 kill
-bindsym --whole-window $mod+Shift+button2 xkill
 
 # ----------------------------------------------------------------------------------------
 
@@ -123,7 +124,6 @@ exec_always --no-startup-id sbxkb
 exec xfce4-clipman
 
 # These are new, remember to install the software
-exec_always --no-startup-id optimus-manager-qt
 exec --no-startup-id qbittorrent
 exec --no-startup-id ~/.fehbg
 exec firefox
