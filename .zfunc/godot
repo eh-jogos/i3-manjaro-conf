@@ -3,15 +3,13 @@ function godot(){
 	# echo "${@:2}"
 	v21=~/WORK_SSD/Godot/21x/Godot_v2.1.6-stable_x11.64
 	v30=~/WORK_SSD/Godot/30x/Godot_v3.0.6-stable_x11.64
-	v31=~/WORK_SSD/Godot/31x/Godot_v3.1.1-stable_x11.64
-	v32=~/WORK_SSD/Godot/32x/Godot_v3.2.3-stable_x11.64
 	v32_steam_folder=~/WORK_SSD/Godot/32x-Steam/
-	v33=~/WORK_SSD/Godot/33x/Godot_v3.3.4-stable_x11.64
 	v34=~/WORK_SSD/Godot/34x/Godot_v3.4.4-stable_x11.64
-	v40=~/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64
+	v35=~/WORK_SSD/Godot/35x/Godot_v3.5-stable_x11.64
+	v40=~/WORK_SSD/Godot/40x/Godot_v4.0-alpha13_linux.64
 	vmo=~/WORK_SSD/eh_jogos/Trabalhos/GameMunchers/monster_outbreak/mo-project/.binaries/godot/godot_steam_linux.64
 	vkaru=~/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/karu_project/.godot_steam_binaries/GodotSteam-3.4.4-stable-editor-x11.64
-	defalt_version=$v34
+	default_version=$v35
 
 	case $1 in
 		"-h" | "--help")
@@ -19,11 +17,9 @@ function godot(){
 			echo "Current arguments are:"
 			echo " - 21---------- opens Godot 2.1.x"
 			echo " - 30---------- opens Godot 3.0.x"
-			echo " - 31---------- opens Godot 3.1.x"
-			echo " - 32---------- opens Godot 3.2.x"
 			echo " - 32-steam --- opens Custom Godot 3.2.x with Steam Module"
-			echo " - 33---------- opens Godot 3.3.x"
 			echo " - 34 --------- opens Godot 3.4.x"
+			echo " - 35 --------- opens Godot 3.5.x"
 			exho " - 40 --------- opens Godot 4.0.0 alpha 8"
 			echo " - mo --------- opens custom Godot with steam with Monster Outbreak project"
 			echo " - karu ------- opens custom Godot with steam for Karu project"
@@ -34,19 +30,10 @@ function godot(){
 		"30")
 			prime-run "$v30" "${@:2}"
 			;;
-		"31")
-			prime-run "$v31" "${@:2}"
-			;;
-		"32")
-			prime-run "$v32" "${@:2}"
-			;;
 		"32-steam")
 			export LD_PRELOAD=~/.local/share/Steam/ubuntu12_64/gameoverlayrenderer.so
 			cd $v32_steam_folder
 			./godot.x11.opt.tools.64 "${@:2}"
-			;;
-		"33")
-			prime-run "$v33" "${@:2}"
 			;;
 		"ali")
 			prime-run "$vali" "${@:2}"
@@ -75,14 +62,19 @@ function godot(){
 			cd $previous_folder
 			;;
 		*)
-			if [[ $1 != "" ]]
+			if [[ $1 != "" && $1 != "default" ]]
 			then
 				printf "\n--WARNING--#####\n"
 				printf "Could Not Find %s." "$1"
 				printf "\n##################\n"
 			fi
 			echo "Opening default option, use -h to see all possible arguments."
-			prime-run "$defalt_version" "${@:1}"
+			if [ $1 != "default" ]
+			then
+				prime-run "$default_version" "${@:1}"
+			else
+				prime-run "$default_version" "${@:2}"
+			fi
 			;;
 	esac
 }

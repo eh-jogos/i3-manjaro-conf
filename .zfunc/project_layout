@@ -15,6 +15,7 @@ function project_layout(){
 	
 	generic_godot_layout=~/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/GenericGodotProjectSetup.sh
 	generic_blender_layout=~/WORK_SSD/i3-manjaro-conf/window_layouts_by_project/GenericBlenderProjectSetup.sh
+	godot_version="default"
 	godot_path="latest"
 	
 	case $1 in
@@ -27,7 +28,7 @@ function project_layout(){
 			firefox_tabs[1]="https://itch.io/dashboard"
 			firefox_tabs[2]="https://trello.com/b/zmqqqMzA/jenga-de-shots"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"gamejolt_api" | "gjapi")
 			project_name="Godot GameJolt API plugin"
@@ -37,7 +38,7 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/126112/"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"dcors")
 			project_name="DCORS Project"
@@ -49,7 +50,7 @@ function project_layout(){
 			firefox_tabs[2]="https://docs.godotengine.org/en/stable/tutorials/math/vector_math.html"
 			firefox_tabs[3]="https://app.hacknplan.com/p/118696/"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"muto")
 			project_name="Muto Project"
@@ -59,7 +60,7 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/144298/"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"monster_outbreak" | "gm-mo")
 			project_name="Game Muncher's Monster Oubreak Project"
@@ -71,7 +72,7 @@ function project_layout(){
 			firefox_tabs[1]="https://www.timeanddate.com/worldclock/personal.html"
 			firefox_tabs[2]="https://freedom-games-testing.codecks.io"
 			
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"cosmic_abyss" | "escape_abyss" | "cosmic" | "abyss" )
 			project_name="Escape From the Cosmic Abyss"
@@ -82,7 +83,7 @@ function project_layout(){
 			firefox_tabs[1]="https://partner.steamgames.com/"
 			firefox_tabs[2]="https://itch.io/dashboard"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"blender" )
 			project_name="Blender Learning"
@@ -107,17 +108,18 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://app.hacknplan.com/p/150905/"
 
-			~/WORK_SSD/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			~/WORK_SSD/Backups/i3-manjaro-conf/window_layouts_by_project/ActionRPGCourseGodotProjectSetup.sh $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"karu")
 			project_name="KaRu VN"
 			project_path=~/WORK_SSD/eh_jogos/Trabalhos/MirrorStudios/KaRu/
 			godot_project_folder="karu_project/"
+			godot_version="karu"
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://trello.com/b/F5HdWf1V/karuv2"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"shadow_ocean")
 			project_name="Shadow Ocean"
@@ -127,19 +129,19 @@ function project_layout(){
 			firefox_tabs=()
 			firefox_tabs[1]="https://www.notion.so/b00c086964644e94a765e8c2cbac7701?v=27dc5f07d4a74563b2dfe18dacbc45a0"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		"quiver")
 			project_name="Quiver Projects"
 			project_path=~/WORK_SSD/eh_jogos/Trabalhos/Quiver/Templates/BeatemUp/
 			godot_project_folder="template_beat_project/"
-			godot_path=~/WORK_SSD/Godot/40x/Godot_v4.0-alpha12_linux.64
+			godot_path=~/WORK_SSD/Godot/40x/Godot_v4.0-alpha13_linux.64
 			
 			firefox_tabs=()
 			firefox_tabs[1]="https://github.com/orgs/quiver-dev/projects/4/views/2"
 			firefox_tabs[2]="https://app.letsdeel.com/contract/mq2n4rx"
 
-			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_path $firefox_tabs
+			$generic_godot_layout $project_name $project_path $godot_project_folder $dual_monitor $godot_version $godot_path $firefox_tabs
 			;;
 		*)
 			echo "project_layout needs to receive one argument that is the project name or alias"

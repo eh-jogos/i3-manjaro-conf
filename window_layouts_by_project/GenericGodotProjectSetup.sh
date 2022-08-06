@@ -7,7 +7,9 @@
 # $2 - WORK_FOLDER
 # $3 - GODOT_PROJECT_FOLDER
 # $4 - DUAL MONITORs
-# $5... - everything from 5 onwards will be considered as firefox tabs
+# $5 - GODOT VERSION COMMAND
+# $6 - ALTERNATE GODOT PATH
+# $7... - everything from 7 onwards will be considered as firefox tabs
 # Dependencies:
 # - i3wm
 # - Path to Project
@@ -38,7 +40,7 @@ function get_absolute_path(){
 SETUP_NAME=$1
 WORK_FOLDER=$(get_absolute_path $2)
 GODOT_PROJECT_FOLDER=$3
-FIREFOX_TABS=( ${@:6} )
+FIREFOX_TABS=( ${@:7} )
 
 DUAL_MONITORS=true
 if [ ! -z "$4" ]
@@ -57,8 +59,10 @@ else
 	echo "Dual Monitor Setup for $SETUP_NAME"
 fi
 
-ALTERNATE_GODOT=$(get_absolute_path $5)
-if [ "$5" = "latest" ]
+GODOT_VERSION=$5
+
+ALTERNATE_GODOT=$(get_absolute_path $6)
+if [ "$6" = "latest" ]
 then
 	ALTERNATE_GODOT=""
 else
@@ -163,7 +167,7 @@ fi
 
 if [[ -z $ALTERNATE_GODOT ]]
 then
-	godot -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
+	godot $GODOT_VERSION -e --path $WORK_FOLDER/$GODOT_PROJECT_FOLDER & 
 else
 	parent_folder=$(dirname $ALTERNATE_GODOT)
 	cd $parent_folder

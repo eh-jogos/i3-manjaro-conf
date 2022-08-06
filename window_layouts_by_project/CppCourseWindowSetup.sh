@@ -79,7 +79,7 @@ sleep 1
 i3-msg workspace $W4
 if [ $DUAL_MONITORS = "true" ]
 then
-    i3-msg move workspace to output $MONITOR_LEFT
+    i3-msg move workspace to output $MONITOR_RIGHT
 fi
 code $CPP_COURSE_FOLDER
 while ! [[ "$(wmctrl -lx)" =~ "code-oss.code-oss" ]] 
